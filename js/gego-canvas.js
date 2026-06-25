@@ -30,9 +30,9 @@ function buildGraph(W, H) {
   const nodes = /** @type {Node[]} */ ([]);
   const edges = /** @type {Edge[]} */ ([]);
 
-  // Cluster layout — proportional to canvas dimensions
-  const clusterA = { x: W * 0.72, y: H * 0.38, rx: W * 0.18, ry: H * 0.28 };
-  const clusterB = { x: W * 0.80, y: H * 0.62, rx: W * 0.13, ry: H * 0.22 };
+  // Cluster layout — pushed right so the network sits behind the text column
+  const clusterA = { x: W * 0.80, y: H * 0.38, rx: W * 0.18, ry: H * 0.28 };
+  const clusterB = { x: W * 0.88, y: H * 0.62, rx: W * 0.13, ry: H * 0.22 };
   const countA = 28;
   const countB = 22;
 
@@ -103,7 +103,7 @@ function drawFrame(ctx, nodes, edges, W, H, scale = 1) {
 
   // Anchor expansion on the right side so the network grows toward center-left
   if (scale !== 1) {
-    const ox = W * 0.82;
+    const ox = W * 0.88;
     const oy = H * 0.50;
     ctx.save();
     ctx.translate(ox, oy);
@@ -119,13 +119,13 @@ function drawFrame(ctx, nodes, edges, W, H, scale = 1) {
 
     let opacity, lineWidth;
     if (bridge) {
-      opacity   = 0.08;
-      lineWidth = 0.5;
+      opacity   = 0.14;
+      lineWidth = 0.8;
     } else {
       const dist = Math.hypot(b.x - a.x, b.y - a.y);
       const norm = Math.min(dist / MAX_DIST, 1);
-      opacity   = (1 - norm) * 0.22 + 0.04;
-      lineWidth = (1 - norm) * 0.8  + 0.3;
+      opacity   = (1 - norm) * 0.32 + 0.08;
+      lineWidth = (1 - norm) * 1.4  + 0.5;
     }
 
     ctx.beginPath();
@@ -139,8 +139,8 @@ function drawFrame(ctx, nodes, edges, W, H, scale = 1) {
   // Nodes — small intersection dots, Gego-style
   nodes.forEach(n => {
     const isA    = n.cluster === 0;
-    const radius  = isA ? 1.8 : 1.4;
-    const opacity = isA ? 0.45 : 0.35;
+    const radius  = isA ? 2.2 : 1.8;
+    const opacity = isA ? 0.55 : 0.45;
 
     ctx.beginPath();
     ctx.arc(n.x, n.y, radius, 0, Math.PI * 2);
@@ -161,8 +161,8 @@ function drawFrame(ctx, nodes, edges, W, H, scale = 1) {
       const my = (pathNodes[p].y + pathNodes[p + 1].y) / 2;
       ctx.quadraticCurveTo(pathNodes[p].x, pathNodes[p].y, mx, my);
     }
-    ctx.strokeStyle = INK_BASE + '0.28)';
-    ctx.lineWidth   = 1.2;
+    ctx.strokeStyle = INK_BASE + '0.38)';
+    ctx.lineWidth   = 1.8;
     ctx.stroke();
   }
 
