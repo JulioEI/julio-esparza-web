@@ -7,28 +7,36 @@
 export const PROFILE = {
   name:      'Julio Esparza',
   nameShort: 'Julio\nEsparza',
-  eyebrow:   'Computational Neuroscientist · Data Scientist',
-  statement: `I build mathematical tools to decode how neural circuits organize
-    high-dimensional information — from hippocampal manifolds to scalable AI
-    infrastructure. PhD Cum Laude, Imperial College Distinction, first-author
-    papers in <em>Neuron</em> and <em>PLOS Computational Biology</em>.`,
+  eyebrow:   'Computational Neuroscientist · AI Engineer',
+  statement: `I build tools that turn structure hidden in high-dimensional data
+    into things people actually use — a manifold-analysis method reused across
+    neuroscience, audio, and computer vision <!-- TODO: real number --> (cited
+    [X]+ times since publication), and production GenAI infrastructure
+    integrating data across [N] external providers at Deloitte. PhD Cum Laude,
+    first-author in <em>Neuron</em>, co-first-author in <em>PLOS Computational
+    Biology</em>.`,
   about: {
-    lead: `I work at the intersection of topology, geometry, and neural
-      computation — building tools that reveal structure hidden in
-      high-dimensional data.`,
+    lead: `I build tools that turn structure hidden in high-dimensional data
+      into things people actually use — methods other labs reuse,
+      infrastructure running in production.`,
     paragraphs: [
-      `My research centers on how the hippocampus organizes spatial information
-      across cell types. My doctoral thesis demonstrated, for the first time,
-      that deep and superficial CA1 sublayers form geometrically distinct neural
-      manifolds that encode space through entirely independent reference frames —
-      a finding that reframes how population-level codes are interpreted.`,
+      `My doctoral research showed, for the first time, that deep and
+      superficial CA1 sublayers form geometrically distinct neural manifolds
+      that encode space through entirely independent reference frames —
+      overturning the assumption that CA1 computes a single, unified spatial
+      code, with direct implications for how population-level signals are
+      interpreted across the field.`,
       `Beyond neuroscience, I design general-purpose computational tools: the
       Structure Index (SI), a graph-based method for quantifying variable
       organization in arbitrary-dimensional spaces, has been validated across
-      neural data, audio classification, and computer vision.`,
-      `Currently building AI infrastructure and GenAI solutions at Deloitte,
-      while staying close to the frontier questions in neural computation and
-      machine intelligence.`,
+      neural data, audio classification, and computer vision, and is openly
+      available for other groups to reuse <!-- TODO: real number -->
+      ([X]+ citations since publication).`,
+      `Today I build production AI infrastructure at Deloitte: GenAI pipelines
+      and LLM integrations that harmonize data across <!-- TODO: real number -->
+      [N] external providers, running on Snowflake infrastructure I designed
+      end-to-end — the same instinct for finding and exploiting structure, now
+      applied to systems people depend on daily.`,
     ],
     stats: [
       { number: '7',  label: 'Publications'       },
@@ -100,12 +108,12 @@ export const SKILLS = [
     items: ['Neural manifolds & TDA', 'Large language models', 'Sentence transformers', 'CNN, XGBoost, SVR', 'Reinforcement learning', 'Embeddings & RAG'],
   },
   {
-    heading: 'Computational',
-    items: ['Python (TF, sklearn, numpy)', 'MATLAB', 'Topological data analysis', 'Graph theory & k-NN', 'Signal processing', 'Spectral analysis'],
-  },
-  {
     heading: 'Infrastructure',
     items: ['Snowflake & dbt', 'PostgreSQL', 'Liquibase', 'ETL pipeline design', 'Git', 'Cloud data architectures'],
+  },
+  {
+    heading: 'Computational',
+    items: ['Python (TF, sklearn, numpy)', 'MATLAB', 'Topological data analysis', 'Graph theory & k-NN', 'Signal processing', 'Spectral analysis'],
   },
   {
     heading: 'Scientific',
@@ -119,25 +127,25 @@ export const TIMELINE = [
     period: '2025 — present',
     role:   'Data Scientist · AI Engineer',
     where:  'Deloitte España, Advanced Analytics & AI',
-    detail: 'Design and implementation of scalable AI solutions: GenAI pipelines, LLM integration, ETL harmonisation across heterogeneous providers, Snowflake infrastructure.',
+    detail: 'Designed and shipped production GenAI pipelines for an international client: LLM integration, multi-provider ETL harmonisation, Snowflake infrastructure built end-to-end.',
   },
   {
     period: '2021 — 2025',
     role:   'PhD in Computational Neuroscience — Cum Laude',
     where:  'UAM / Instituto Cajal, CSIC · Madrid',
-    detail: 'INPhINIT La Caixa Fellow (4% acceptance). Developed the Structure Index, a general-purpose graph-based tool for high-dimensional feature quantification. Demonstrated geometrically distinct and functionally independent manifolds in CA1 sublayers. Research stay at Columbia University (Losonczy Lab, 2023).',
+    detail: 'Developed the Structure Index, a general-purpose tool for quantifying structure in high-dimensional data, and used it to show that CA1 sublayers form independent, functionally distinct spatial codes. INPhINIT La Caixa Fellow (4% acceptance). Research stay at Columbia University (Losonczy Lab, 2023).',
   },
   {
     period: '2020 — 2021',
     role:   'MSc Biomedical Engineering — Distinction · Top 1.8%',
     where:  'Imperial College London',
-    detail: 'Stella Bagrit Centenary Prize (best MSc project, cohort-wide). Thesis: first neural manifold analysis of hippocampal spatial navigation. GPA 80.50/100.',
+    detail: 'Thesis: first neural manifold analysis of hippocampal spatial navigation — a direct precursor to the doctoral work. Stella Bagrit Centenary Prize, best MSc project cohort-wide. GPA 80.50/100.',
   },
   {
     period: '2019 — 2021',
     role:   'Research Engineer',
     where:  'Instituto Cajal, CSIC · Perea & Navarrete Lab',
-    detail: 'Automated computer vision pipeline for ROI detection in calcium imaging video. Signal processing and spectral analysis of high-frequency neural data. Three Nature-family publications.',
+    detail: 'Built an automated computer vision pipeline for ROI detection in calcium imaging, replacing manual preprocessing and increasing throughput. Signal and spectral analysis work contributed to three Nature-family publications.',
   },
   {
     period: '2015 — 2019',
