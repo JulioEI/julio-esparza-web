@@ -1,0 +1,13 @@
+{
+  "name": "julio-esparza-web",
+  "private": true,
+  "description": "Dev tooling only — the site itself ships zero dependencies and zero build step.",
+  "scripts": {
+    "format": "prettier --write \"**/*.{js,css,html,md}\"",
+    "format:check": "prettier --check \"**/*.{js,css,html,md}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "sharp-cli": "^5.2.0"
+  }
+}

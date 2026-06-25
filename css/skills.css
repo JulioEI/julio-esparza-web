@@ -1,0 +1,32 @@
+/* =============================================================
+   skills.css — Technical skills grid
+   ============================================================= */
+
+.skills-grid {
+  display:               grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:                   var(--space-lg);
+}
+
+.skill-group__heading {
+  font-size:      10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color:          var(--color-ink-light);
+  margin-bottom:  1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom:  1px solid var(--color-line);
+}
+
+.skill-group__list {
+  list-style:     none;
+  display:        flex;
+  flex-direction: column;
+  gap:            0.5rem;
+}
+
+.skill-group__item {
+  font-size:   var(--text-sm);
+  color:       var(--color-ink-mid);
+  line-height: 1.4;
+}

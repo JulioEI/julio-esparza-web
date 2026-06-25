@@ -1,0 +1,48 @@
+/* =============================================================
+   tokens.css — Design tokens (single source of truth)
+   All colour, spacing, type, and motion values live here.
+   Import this first in every other CSS file.
+   ============================================================= */
+
+:root {
+  /* ── Colour ── */
+  --color-bg:          #f5f4f2;
+  --color-surface:     #faf9f7;
+  --color-ink:         #1a1a1a;
+  --color-ink-mid:     #555555;
+  --color-ink-light:   #999999;
+  --color-ink-xlight:  #cccccc;
+
+  --color-line:        rgba(26, 26, 26, 0.12);
+  --color-line-strong: rgba(26, 26, 26, 0.25);
+  --color-line-accent: rgba(26, 26, 26, 0.60);
+
+  /* ── Typography ── */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body:    'Inter', sans-serif;
+
+  --text-xs:   11px;
+  --text-sm:   12px;
+  --text-base: 14px;
+  --text-md:   15px;
+  --text-lg:   16px;
+
+  /* ── Spacing ── */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  3rem;
+  --space-xl:  4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 7rem;
+
+  /* ── Layout ── */
+  --section-padding-x: 4rem;
+  --section-padding-y: var(--space-3xl);
+  --max-content-width: 1200px;
+
+  /* ── Motion ── */
+  --transition-fast:   0.15s ease;
+  --transition-base:   0.2s ease;
+  --transition-slow:   0.35s ease;
+}

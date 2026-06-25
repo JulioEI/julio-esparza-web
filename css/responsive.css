@@ -1,0 +1,89 @@
+/* =============================================================
+   responsive.css — Breakpoints (imported last)
+   All overrides for tablet and mobile live here, not scattered
+   across component files, so layout changes are easy to audit.
+   ============================================================= */
+
+/* ── Tablet (≤ 900px) ── */
+@media (max-width: 900px) {
+  :root {
+    --section-padding-x: 2rem;
+  }
+
+  /* Nav */
+  .site-nav {
+    padding-left:  var(--section-padding-x);
+    padding-right: var(--section-padding-x);
+  }
+
+  .nav__links {
+    gap: 1.5rem;
+  }
+
+  /* Hero */
+  .hero__scroll-hint {
+    left: var(--section-padding-x);
+  }
+
+  /* About */
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap:                   var(--space-lg);
+  }
+
+  /* Skills */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap:                   var(--space-md);
+  }
+
+  /* Research */
+  .paper {
+    grid-template-columns: 60px 1fr;
+  }
+
+  .paper__arrow {
+    display: none;
+  }
+
+  /* Awards */
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .award:nth-child(even) {
+    padding-left:  0;
+    border-left:   none;
+  }
+
+  /* Footer */
+  .site-footer {
+    flex-direction: column;
+    gap:            0.5rem;
+    text-align:     center;
+  }
+}
+
+/* ── Mobile (≤ 600px) ── */
+@media (max-width: 600px) {
+  /* Nav */
+  .nav__links {
+    display: none;
+  }
+
+  /* About stats */
+  .about__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Skills */
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Timeline */
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap:                   var(--space-xs);
+  }
+}

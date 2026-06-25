@@ -1,0 +1,47 @@
+/* =============================================================
+   timeline.css — Experience & education chronological list
+   ============================================================= */
+
+.timeline-list {
+  max-width: 820px;
+}
+
+.timeline-item {
+  display:               grid;
+  grid-template-columns: 160px 1fr;
+  gap:                   var(--space-md);
+  padding:               var(--space-md) 0;
+  border-bottom:         1px solid var(--color-line);
+}
+
+.timeline-item:first-child {
+  border-top: 1px solid var(--color-line);
+}
+
+.timeline-item__period {
+  font-size:      var(--text-xs);
+  letter-spacing: 0.06em;
+  color:          var(--color-ink-light);
+  padding-top:    2px;
+  line-height:    1.4;
+}
+
+.timeline-item__role {
+  font-family:   var(--font-display);
+  font-size:     var(--text-md);
+  font-weight:   400;
+  color:         var(--color-ink);
+  margin-bottom: 0.3rem;
+}
+
+.timeline-item__where {
+  font-size:     var(--text-sm);
+  color:         var(--color-ink-mid);
+  margin-bottom: 0.6rem;
+}
+
+.timeline-item__detail {
+  font-size:   var(--text-sm);
+  color:       var(--color-ink-light);
+  line-height: 1.6;
+}

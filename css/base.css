@@ -1,0 +1,75 @@
+/* =============================================================
+   base.css — Reset, global defaults, typography scale
+   ============================================================= */
+
+@import url('tokens.css');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background:    var(--color-bg);
+  color:         var(--color-ink);
+  font-family:   var(--font-body);
+  font-weight:   300;
+  font-size:     var(--text-md);
+  line-height:   1.7;
+  overflow-x:    hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Focus ── */
+:focus-visible {
+  outline: 2px solid var(--color-ink-mid);
+  outline-offset: 3px;
+}
+
+/* ── Shared section rhythm ── */
+section {
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+section + section {
+  border-top: 1px solid var(--color-line);
+}
+
+/* ── Section label (eyebrow above each section heading) ── */
+.section-label {
+  display:         flex;
+  align-items:     center;
+  gap:             1.5rem;
+  margin-bottom:   var(--space-xl);
+  font-size:       10px;
+  letter-spacing:  0.2em;
+  text-transform:  uppercase;
+  color:           var(--color-ink-light);
+}
+
+.section-label::after {
+  content:    '';
+  flex:       0 0 40px;
+  height:     1px;
+  background: var(--color-ink-xlight);
+}
+
+/* ── Utility: screen-reader only ── */
+.sr-only {
+  position:   absolute;
+  width:      1px;
+  height:     1px;
+  padding:    0;
+  overflow:   hidden;
+  clip:       rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border:     0;
+}

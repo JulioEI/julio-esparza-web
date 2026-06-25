@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ── SEO ── -->
+  <title>Julio Esparza — Computational Neuroscientist</title>
+  <meta name="description" content="Julio Esparza — computational neuroscientist and AI engineer. PhD Cum Laude (UAM/CSIC), MSc Distinction (Imperial College London). First-author papers in Neuron and PLOS Computational Biology.">
+  <meta name="author" content="Julio Esparza Ibáñez">
+
+  <!-- ── Open Graph ── -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Julio Esparza — Computational Neuroscientist">
+  <meta property="og:description" content="Building mathematical tools to decode how neural circuits organize high-dimensional information.">
+  <meta property="og:url"         content="https://julioesparza.com">
+
+  <!-- ── Fonts (preconnect first, then stylesheet) ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ── Styles ── -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════════════════ -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class="nav__name" href="#hero">Julio Esparza</a>
+    <ul class="nav__links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#timeline">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════════════════ -->
+  <section id="hero" class="hero" aria-label="Introduction">
+    <canvas class="hero__canvas" id="gego-canvas" aria-hidden="true"></canvas>
+    <div class="hero__content" id="hero-content">
+      <!-- Hydrated by main.js → renderHero() -->
+    </div>
+    <span class="hero__scroll-hint" aria-hidden="true">Scroll</span>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       ABOUT
+  ════════════════════════════════════════════════════════ -->
+  <section id="about" aria-labelledby="about-heading">
+    <p class="section-label" id="about-heading">About</p>
+    <div id="about-content">
+      <!-- Hydrated by main.js → renderAbout() -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       RESEARCH
+  ════════════════════════════════════════════════════════ -->
+  <section id="research" aria-labelledby="research-heading">
+    <p class="section-label" id="research-heading">Selected Publications</p>
+    <div class="papers-list" id="papers-list" role="list">
+      <!-- Hydrated by main.js → renderPaper() × N -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SKILLS
+  ════════════════════════════════════════════════════════ -->
+  <section id="skills" aria-labelledby="skills-heading">
+    <p class="section-label" id="skills-heading">Technical Expertise</p>
+    <div id="skills-content">
+      <!-- Hydrated by main.js → renderSkills() -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       TIMELINE
+  ════════════════════════════════════════════════════════ -->
+  <section id="timeline" aria-labelledby="timeline-heading">
+    <p class="section-label" id="timeline-heading">Experience &amp; Education</p>
+    <div class="timeline-list" id="timeline-list">
+      <!-- Hydrated by main.js → renderTimelineItem() × N -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       AWARDS
+  ════════════════════════════════════════════════════════ -->
+  <section id="awards" aria-labelledby="awards-heading">
+    <p class="section-label" id="awards-heading">Recognition</p>
+    <div class="awards-grid" id="awards-grid">
+      <!-- Hydrated by main.js → renderAward() × N -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CONTACT
+  ════════════════════════════════════════════════════════ -->
+  <section id="contact" class="contact" aria-labelledby="contact-heading">
+    <h2 class="contact__lead"  id="contact-lead"><!-- Hydrated --></h2>
+    <p  class="contact__sub"   id="contact-sub"><!-- Hydrated --></p>
+    <div class="contact__links" id="contact-links">
+      <!-- Hydrated by main.js -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <span class="footer__text" id="footer-credit"><!-- Hydrated --></span>
+    <span class="footer__text">julioesparza.com</span>
+  </footer>
+
+  <!-- ── JS entry (ES module) ── -->
+  <script type="module" src="js/main.js"></script>
+
+</body>
+</html>

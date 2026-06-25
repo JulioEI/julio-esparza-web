@@ -1,0 +1,64 @@
+/* =============================================================
+   contact.css — Contact section and site footer
+   ============================================================= */
+
+/* ── Contact section ── */
+.contact {
+  text-align:     center;
+  padding-top:    8rem;
+  padding-bottom: 8rem;
+}
+
+.contact__lead {
+  font-family:    var(--font-display);
+  font-size:      clamp(1.8rem, 4vw, 3.2rem);
+  font-weight:    300;
+  line-height:    1.2;
+  letter-spacing: -0.02em;
+  color:          var(--color-ink);
+  max-width:      600px;
+  margin:         0 auto 2.5rem;
+}
+
+.contact__sub {
+  font-size:     var(--text-sm);
+  color:         var(--color-ink-light);
+  margin-bottom: var(--space-lg);
+}
+
+.contact__links {
+  display:         flex;
+  justify-content: center;
+  gap:             var(--space-md);
+  flex-wrap:       wrap;
+}
+
+.contact__link {
+  font-size:       var(--text-sm);
+  letter-spacing:  0.1em;
+  text-transform:  uppercase;
+  color:           var(--color-ink);
+  text-decoration: none;
+  border-bottom:   1px solid var(--color-ink-xlight);
+  padding-bottom:  3px;
+  transition:      border-color var(--transition-base);
+}
+
+.contact__link:hover {
+  border-color: var(--color-ink);
+}
+
+/* ── Footer ── */
+.site-footer {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  padding:         var(--space-md) var(--section-padding-x);
+  border-top:      1px solid var(--color-line);
+}
+
+.footer__text {
+  font-size:      var(--text-xs);
+  letter-spacing: 0.06em;
+  color:          var(--color-ink-xlight);
+}
