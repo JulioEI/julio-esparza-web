@@ -31,8 +31,8 @@ function buildGraph(W, H) {
   const edges = /** @type {Edge[]} */ ([]);
 
   // Cluster layout — pushed right so the network sits behind the text column
-  const clusterA = { x: W * 0.80, y: H * 0.38, rx: W * 0.18, ry: H * 0.28 };
-  const clusterB = { x: W * 0.88, y: H * 0.62, rx: W * 0.13, ry: H * 0.22 };
+  const clusterA = { x: W * 0.74, y: H * 0.38, rx: W * 0.18, ry: H * 0.28 };
+  const clusterB = { x: W * 0.82, y: H * 0.62, rx: W * 0.13, ry: H * 0.22 };
   const countA = 28;
   const countB = 22;
 
@@ -82,7 +82,7 @@ function buildGraph(W, H) {
  * @param {number} t   timestamp from requestAnimationFrame
  */
 function animateNodes(nodes, t) {
-  const DRIFT = 4;
+  const DRIFT = 6;
   nodes.forEach(n => {
     n.x = n.baseX + Math.sin(t * n.speed + n.phase) * DRIFT;
     n.y = n.baseY + Math.cos(t * n.speed * 0.7 + n.phase) * DRIFT * 0.6;
