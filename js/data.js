@@ -9,39 +9,44 @@ export const PROFILE = {
   nameShort: 'Julio\nEsparza',
   eyebrow:   'Computational Neuroscientist · AI Engineer',
   statement: `I build the tools to ask sharper questions about high-dimensional
-    data, then ship them — a manifold-analysis method reused across
+    data, then ship them: a manifold-analysis method reused across
     neuroscience, audio, and computer vision, and production GenAI
     infrastructure integrating data across 20+ external providers at Deloitte.
-    My research on hippocampal coding — first-author in <em>Neuron</em>,
-    co-first-author in <em>PLOS Computational Biology</em> — has been cited
-    450+ times. PhD Cum Laude.`,
+    My research on hippocampal coding, published first-author in
+    <em>Neuron</em> and co-first-author in <em>PLOS Computational Biology</em>,
+    has been cited 450+ times. PhD Cum Laude.`,
   about: {
     lead: `I'm a computational neuroscientist who builds the tools needed to
-      ask sharper questions about the brain — and an engineer who ships them
+      ask sharper questions about the brain, and an engineer who ships them
       into systems people actually use.`,
     paragraphs: [
       `My doctoral research asked a simple question: why does averaging across
       CA1 erase structure that's obvious once you separate cell types? The
-      answer — that deep and superficial sublayers form geometrically distinct
-      neural manifolds encoding space through entirely independent reference
-      frames — overturned the assumption that CA1 computes a single, unified
-      spatial code, with direct implications for how population-level signals
-      are interpreted across the field.`,
+      answer was that deep and superficial sublayers form geometrically
+      distinct neural manifolds, encoding space through entirely independent
+      reference frames. That overturned the assumption that CA1 computes a
+      single, unified spatial code, with direct implications for how
+      population-level signals are interpreted across the field.`,
       `Beyond neuroscience, I design general-purpose computational tools: the
       Structure Index (SI), a graph-based method for quantifying variable
       organization in arbitrary-dimensional spaces, has been validated across
-      neural data, audio classification, and computer vision, and is openly
-      available for other groups to build on (11 citations since
-      publication).`,
-      `Today I build production AI infrastructure at Deloitte: GenAI pipelines
-      and LLM integrations that harmonize data across over 20 external providers,
-      running on Snowflake infrastructure I designed end-to-end, the same instinct
-      for finding and exploiting structure, now applied to systems people depend on daily.`,
+      neural data, audio classification, and computer vision. It's open
+      source at <a href="https://github.com/PridaLab/structure_index"
+      target="_blank" rel="noopener">PridaLab/structure_index</a> and has
+      been cited 11 times since publication.`,
+      `I chose engineering because it let me translate scientific depth into
+      something that actually works in the world, and that instinct never
+      went quiet through a PhD spent on methodological rigor. Today I build
+      production AI infrastructure at Deloitte: GenAI pipelines and LLM
+      integrations that harmonize data across 20+ external providers, AI
+      agents for automated data quality checks, semantic layers over
+      Snowflake, all running on infrastructure I designed end to end. Same
+      instinct, now applied to systems people depend on daily.`,
     ],
     stats: [
-      { number: '7',  label: 'Publications'       },
-      { number: '3',  label: 'First-author'        },
-      { number: '4%', label: 'INPhINIT acceptance' },
+      { number: '7',  label: 'Publications' },
+      { number: '3',  label: 'First-author' },
+      { number: '450+', label: 'Citations'  },
     ],
   },
   location:    'Madrid · Open to relocation · English & Spanish',
@@ -105,11 +110,11 @@ export const PAPERS = [
 export const SKILLS = [
   {
     heading: 'ML / AI',
-    items: ['Neural manifolds & TDA', 'Large language models', 'Sentence transformers', 'CNN, XGBoost, SVR', 'Reinforcement learning', 'Embeddings & RAG'],
+    items: ['AI agents', 'Large language models', 'Neural manifolds & TDA', 'Sentence transformers', 'CNN, XGBoost, SVR', 'Reinforcement learning', 'Embeddings & RAG'],
   },
   {
     heading: 'Infrastructure',
-    items: ['Snowflake & dbt', 'PostgreSQL', 'Liquibase', 'ETL pipeline design', 'Git', 'Cloud data architectures'],
+    items: ['Snowflake & dbt', 'Semantic layers', 'PostgreSQL', 'Liquibase', 'ETL pipeline design', 'Git', 'Cloud data architectures'],
   },
   {
     heading: 'Computational',
@@ -127,19 +132,19 @@ export const TIMELINE = [
     period: '2025 — present',
     role:   'Data Scientist · AI Engineer',
     where:  'Deloitte España, Advanced Analytics & AI',
-    detail: 'Designed and shipped production GenAI pipelines for an international client: LLM integration, multi-provider ETL harmonisation, Snowflake infrastructure built end-to-end.',
+    detail: 'Designed and shipped production GenAI pipelines for an international client: LLM integration, AI agents for automated data quality checks, semantic layers over Snowflake, multi-provider ETL harmonisation.',
   },
   {
     period: '2021 — 2025',
     role:   'PhD in Computational Neuroscience — Cum Laude',
-    where:  'UAM / Instituto Cajal, CSIC · Madrid',
-    detail: 'Developed the Structure Index, a general-purpose tool for quantifying structure in high-dimensional data, and used it to show that CA1 sublayers form independent, functionally distinct spatial codes. INPhINIT La Caixa Fellow (4% acceptance). Research stay at Columbia University (Losonczy Lab, 2023).',
+    where:  'UAM / Instituto Cajal, CSIC · Madrid · Internship: Columbia University (Losonczy Lab, NYC)',
+    detail: 'Developed the Structure Index, a general-purpose tool for quantifying structure in high-dimensional data, and used it to show that CA1 sublayers form independent, functionally distinct spatial codes. INPhINIT La Caixa Fellow (4% acceptance).',
   },
   {
     period: '2020 — 2021',
     role:   'MSc Biomedical Engineering — Distinction · Top 1.8%',
     where:  'Imperial College London',
-    detail: 'Thesis: first neural manifold analysis of hippocampal spatial navigation — a direct precursor to the doctoral work. Stella Bagrit Centenary Prize, best MSc project cohort-wide. GPA 80.50/100.',
+    detail: 'Thesis: first neural manifold analysis of hippocampal spatial navigation, a direct precursor to the doctoral work. Stella Bagrit Centenary Prize, best MSc project cohort-wide. GPA 80.50/100.',
   },
   {
     period: '2019 — 2021',
@@ -158,11 +163,11 @@ export const TIMELINE = [
 /** @typedef {{ year: string, name: string, org: string }} Award */
 export const AWARDS = [
   { year: '2024', name: 'TPDA Award',                        org: 'Society for Neuroscience, Chicago' },
+  { year: '2023', name: 'iMOVE23 Travel Scholarship',         org: 'CSIC' },
   { year: '2022', name: 'INPhINIT Retaining Fellowship',      org: 'La Caixa Foundation · 4% acceptance rate' },
   { year: '2021', name: 'Stella Bagrit Centenary Prize',      org: 'Imperial College London · Best MSc project' },
   { year: '2021', name: '1st Prize — BrainCode Games Hackathon', org: 'The BrainCode' },
   { year: '2021', name: 'FPU Doctoral Fellowship',            org: 'Ministerio de Ciencia y Educación' },
   { year: '2019', name: '1st Prize — Engineering Medicine Contest', org: 'CEEIBIS' },
   { year: '2019', name: 'Scholarship for Excellence',         org: 'Comunidad de Madrid' },
-  { year: '2016', name: 'Scholarship for Excellence',         org: 'Comunidad de Madrid' },
 ];

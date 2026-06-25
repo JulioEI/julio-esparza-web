@@ -89,6 +89,8 @@ Investigated how hippocampal circuits organize spatial representations, focusing
 - Design and implementation of scalable AI solutions for an international client
 - Led ETL and data harmonisation pipelines, standardising information from multiple external providers and internal systems, integrating LLMs and sentence transformers
 - Built and optimised Snowflake-based data infrastructure (dbt, Liquibase, Python)
+- Built AI agents for automated data quality checks
+- Built semantic layers over Snowflake infrastructure
 - GenAI solution development and deployment
 
 ---
