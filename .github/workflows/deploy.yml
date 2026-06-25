@@ -10,10 +10,9 @@ on:
   workflow_dispatch: # allow manual trigger from the Actions tab
 
 permissions:
-  contents:      read
-  pages:         write
-  id-token:      write
-  administration: write
+  contents: read
+  pages:    write
+  id-token: write
 
 concurrency:
   group:              pages
@@ -32,8 +31,6 @@ jobs:
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
