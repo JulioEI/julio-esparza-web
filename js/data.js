@@ -16,9 +16,10 @@ export const PROFILE = {
     <em>Neuron</em> and co-first-author in <em>PLOS Computational Biology</em>,
     has been cited 450+ times. PhD Cum Laude.`,
   about: {
-    lead: `I'm a computational neuroscientist who builds the tools needed to
-      ask sharper questions about the brain, and an engineer who ships them
-      into systems people actually use.`,
+    lead: `Trained as a biomedical engineer, I'm drawn to problems where
+      rigorous science has to become something that actually works: tools
+      that ask sharper questions about the brain, and systems people
+      actually use.`,
     paragraphs: [
       `My doctoral research asked a simple question: why does averaging across
       CA1 erase structure that's obvious once you separate cell types? The
@@ -156,7 +157,7 @@ export const TIMELINE = [
     period: '2015 — 2019',
     role:   'BSc Biomedical Engineering — GPA 8.5/10',
     where:  'Universidad Carlos III de Madrid · Year abroad: UC Irvine (GPA 3.8)',
-    detail: 'Specialisation in signal processing and data analysis. Honours in Calculus, Signals & Systems, Tissue Engineering. TFG at CSIC: LFP analysis of astrocyte-neuron networks → Nature Neuroscience 2021.',
+    detail: 'Chose biomedical engineering for the chance to translate rigorous science into solutions that improve people’s lives. Specialisation in signal processing and data analysis; honours in Calculus, Signals & Systems, Tissue Engineering. TFG at CSIC: LFP analysis of astrocyte-neuron networks → Nature Neuroscience 2021.',
   },
 ];
 
