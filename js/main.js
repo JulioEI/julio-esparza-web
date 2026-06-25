@@ -22,6 +22,7 @@ import {
 } from './render.js';
 import { initGegoCanvas } from './gego-canvas.js';
 import { initNavScroll }  from './nav-scroll.js';
+import { initScrollFx }   from './scroll-fx.js';
 
 /** Safely query a required element; throws clearly if missing. */
 function $(selector, context = document) {
@@ -87,7 +88,9 @@ function hydrateSections() {
 
 function init() {
   hydrateSections();
-  initGegoCanvas($('#gego-canvas'));
+  const canvas = $('#gego-canvas');
+  initGegoCanvas(canvas);
+  initScrollFx(canvas);
   initNavScroll($('.site-nav'));
 }
 
