@@ -28,6 +28,15 @@
   margin-top: 1.2rem;
 }
 
+.about__body a {
+  color:         inherit;
+  border-bottom: 1px solid var(--color-ink-light);
+}
+
+.about__body a:hover {
+  border-bottom-color: var(--color-ink);
+}
+
 /* ── Stats row ── */
 .about__stats {
   display:               grid;
