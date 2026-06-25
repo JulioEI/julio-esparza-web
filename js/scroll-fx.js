@@ -1,35 +1,22 @@
 /**
- * scroll-fx.js — Scroll-driven scale + fade for the Gego background canvas.
+ * scroll-fx.js — Scroll-driven progress callback for canvas effects.
  *
- * Effect: over the first 1.5 viewport-heights of scroll, the canvas grows
- * from scale(1) to scale(1.5) and fades from opacity 1 to opacity 0.35,
- * then holds. This gives the impression the network expands into the
- * background as the reader moves into the content sections.
+ * Fires onProgress(p) where p is 0–1 over the first 1.5 viewport-heights.
+ * The caller decides what to do with the value (scale, opacity, etc.).
  *
- * Respects prefers-reduced-motion: no transform applied, opacity unchanged.
+ * Disabled under prefers-reduced-motion.
  *
- * @param {HTMLCanvasElement} canvas
+ * @param {(progress: number) => void} onProgress
  */
-export function initScrollFx(canvas) {
+export function initScrollFx(onProgress) {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const MAX_PROGRESS  = 1;        // clamped 0 → 1
-  const SCROLL_RANGE  = window.innerHeight * 1.5;
-  const SCALE_START   = 1.0;
-  const SCALE_END     = 1.5;
-  const OPACITY_START = 1.0;
-  const OPACITY_END   = 0.35;
-
+  const SCROLL_RANGE = window.innerHeight * 1.5;
   let rafScheduled = false;
 
   const update = () => {
     rafScheduled = false;
-    const progress = Math.min(window.scrollY / SCROLL_RANGE, MAX_PROGRESS);
-    const scale    = SCALE_START   + progress * (SCALE_END   - SCALE_START);
-    const opacity  = OPACITY_START + progress * (OPACITY_END - OPACITY_START);
-
-    canvas.style.transform = `scale(${scale})`;
-    canvas.style.opacity   = opacity;
+    onProgress(Math.min(window.scrollY / SCROLL_RANGE, 1));
   };
 
   const onScroll = () => {
@@ -40,5 +27,5 @@ export function initScrollFx(canvas) {
   };
 
   window.addEventListener('scroll', onScroll, { passive: true });
-  update(); // apply initial state
+  update(); // apply initial state (progress = 0)
 }

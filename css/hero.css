@@ -12,14 +12,13 @@
 
 /* Fixed full-page canvas — sits behind all content, scroll-animated via JS */
 .gego-bg {
-  position:         fixed;
-  inset:            0;
-  width:            100%;
-  height:           100%;
-  z-index:          -1;
-  pointer-events:   none;
-  will-change:      transform, opacity;
-  transform-origin: center center;
+  position:       fixed;
+  inset:          0;
+  width:          100%;
+  height:         100%;
+  z-index:        -1;
+  pointer-events: none;
+  will-change:    opacity;
 }
 
 .hero__content {

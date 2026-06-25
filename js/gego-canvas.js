@@ -94,11 +94,22 @@ function animateNodes(nodes, t) {
  * @param {CanvasRenderingContext2D} ctx
  * @param {Node[]} nodes
  * @param {Edge[]} edges
- * @param {number} W
- * @param {number} H
+ * @param {number} W   CSS pixel width
+ * @param {number} H   CSS pixel height
+ * @param {number} scale  scroll-driven scale factor (1.0 at rest)
  */
-function drawFrame(ctx, nodes, edges, W, H) {
+function drawFrame(ctx, nodes, edges, W, H, scale = 1) {
   ctx.clearRect(0, 0, W, H);
+
+  // Anchor expansion on the right side so the network grows toward center-left
+  if (scale !== 1) {
+    const ox = W * 0.82;
+    const oy = H * 0.50;
+    ctx.save();
+    ctx.translate(ox, oy);
+    ctx.scale(scale, scale);
+    ctx.translate(-ox, -oy);
+  }
 
   // Edges
   const MAX_DIST = 180;
@@ -154,7 +165,19 @@ function drawFrame(ctx, nodes, edges, W, H) {
     ctx.lineWidth   = 1.2;
     ctx.stroke();
   }
+
+  if (scale !== 1) ctx.restore();
 }
+
+/** Current scroll progress [0–1], updated externally via setScrollProgress. */
+let scrollProgress = 0;
+
+/**
+ * Set the scroll progress so the next animation frame scales the drawing.
+ * Called by scroll-fx.js.
+ * @param {number} p — clamped 0–1
+ */
+export function setScrollProgress(p) { scrollProgress = p; }
 
 /**
  * Initialise and start the Gego canvas animation.
@@ -163,12 +186,17 @@ function drawFrame(ctx, nodes, edges, W, H) {
 export function initGegoCanvas(canvas) {
   const ctx = canvas.getContext('2d');
   let nodes = [], edges = [];
+  let cssW = 0, cssH = 0;
   let rafId = null;
 
   const resize = () => {
-    canvas.width  = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-    ({ nodes, edges } = buildGraph(canvas.width, canvas.height));
+    const dpr = window.devicePixelRatio || 1;
+    cssW = canvas.offsetWidth;
+    cssH = canvas.offsetHeight;
+    canvas.width  = cssW * dpr;
+    canvas.height = cssH * dpr;
+    ctx.scale(dpr, dpr);
+    ({ nodes, edges } = buildGraph(cssW, cssH));
   };
 
   resize();
@@ -176,13 +204,13 @@ export function initGegoCanvas(canvas) {
 
   const loop = (t) => {
     animateNodes(nodes, t);
-    drawFrame(ctx, nodes, edges, canvas.width, canvas.height);
+    drawFrame(ctx, nodes, edges, cssW, cssH, 1 + scrollProgress * 0.5);
     rafId = requestAnimationFrame(loop);
   };
 
   // Respect user's motion preferences
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    drawFrame(ctx, nodes, edges, canvas.width, canvas.height);
+    drawFrame(ctx, nodes, edges, cssW, cssH, 1);
     return; // static frame only
   }
 
