@@ -8,35 +8,35 @@ export const PROFILE = {
   name:      'Julio Esparza',
   nameShort: 'Julio\nEsparza',
   eyebrow:   'Computational Neuroscientist · AI Engineer',
-  statement: `I build tools that turn structure hidden in high-dimensional data
-    into things people actually use — a manifold-analysis method reused across
-    neuroscience, audio, and computer vision <!-- TODO: real number --> (cited
-    [X]+ times since publication), and production GenAI infrastructure
-    integrating data across [N] external providers at Deloitte. PhD Cum Laude,
-    first-author in <em>Neuron</em>, co-first-author in <em>PLOS Computational
-    Biology</em>.`,
+  statement: `I build the tools to ask sharper questions about high-dimensional
+    data, then ship them — a manifold-analysis method reused across
+    neuroscience, audio, and computer vision, and production GenAI
+    infrastructure integrating data across 20+ external providers at Deloitte.
+    My research on hippocampal coding — first-author in <em>Neuron</em>,
+    co-first-author in <em>PLOS Computational Biology</em> — has been cited
+    450+ times. PhD Cum Laude.`,
   about: {
-    lead: `I build tools that turn structure hidden in high-dimensional data
-      into things people actually use — methods other labs reuse,
-      infrastructure running in production.`,
+    lead: `I'm a computational neuroscientist who builds the tools needed to
+      ask sharper questions about the brain — and an engineer who ships them
+      into systems people actually use.`,
     paragraphs: [
-      `My doctoral research showed, for the first time, that deep and
-      superficial CA1 sublayers form geometrically distinct neural manifolds
-      that encode space through entirely independent reference frames —
-      overturning the assumption that CA1 computes a single, unified spatial
-      code, with direct implications for how population-level signals are
-      interpreted across the field.`,
+      `My doctoral research asked a simple question: why does averaging across
+      CA1 erase structure that's obvious once you separate cell types? The
+      answer — that deep and superficial sublayers form geometrically distinct
+      neural manifolds encoding space through entirely independent reference
+      frames — overturned the assumption that CA1 computes a single, unified
+      spatial code, with direct implications for how population-level signals
+      are interpreted across the field.`,
       `Beyond neuroscience, I design general-purpose computational tools: the
       Structure Index (SI), a graph-based method for quantifying variable
       organization in arbitrary-dimensional spaces, has been validated across
       neural data, audio classification, and computer vision, and is openly
-      available for other groups to reuse <!-- TODO: real number -->
-      ([X]+ citations since publication).`,
+      available for other groups to build on (11 citations since
+      publication).`,
       `Today I build production AI infrastructure at Deloitte: GenAI pipelines
-      and LLM integrations that harmonize data across <!-- TODO: real number -->
-      [N] external providers, running on Snowflake infrastructure I designed
-      end-to-end — the same instinct for finding and exploiting structure, now
-      applied to systems people depend on daily.`,
+      and LLM integrations that harmonize data across over 20 external providers,
+      running on Snowflake infrastructure I designed end-to-end, the same instinct
+      for finding and exploiting structure, now applied to systems people depend on daily.`,
     ],
     stats: [
       { number: '7',  label: 'Publications'       },
@@ -76,28 +76,28 @@ export const PAPERS = [
     venue:   'Curr. Opin. Neurobiol.',
     title:   'From cell types to population dynamics: Making hippocampal manifolds physiologically interpretable',
     authors: '<strong>Esparza J.</strong>, Sebastián ER., de la Prida LM.',
-    doi:     '#',
+    doi:     'https://doi.org/10.1016/j.conb.2023.102800',
   },
   {
     year:    '2023',
     venue:   'Nature Neuroscience',
     title:   'Topological analysis of sharp-wave ripple waveforms',
     authors: 'Sebastián ER., Quintanilla JP., Sanchez-Aguilera A., <strong>Esparza J.</strong>, et al.',
-    doi:     '#',
+    doi:     'https://doi.org/10.1038/s41593-023-01471-9',
   },
   {
     year:    '2022',
     venue:   'Nature Comm.',
     title:   'Ca²⁺-modulated photoactivatable imaging reveals neuron-astrocyte glutamatergic circuitries within the nucleus accumbens',
     authors: 'Serra I., <strong>Esparza J.</strong>, et al.',
-    doi:     '#',
+    doi:     'https://doi.org/10.1038/s41467-022-33020-6',
   },
   {
     year:    '2021',
     venue:   'Nature Neuroscience',
     title:   'GABAergic signaling to astrocytes in the prefrontal cortex sustains goal-directed behaviors',
     authors: 'Mederos S., Sánchez-Puelles C., <strong>Esparza J.</strong>, et al.',
-    doi:     '#',
+    doi:     'https://doi.org/10.1038/s41593-020-00752-x',
   },
 ];
 
