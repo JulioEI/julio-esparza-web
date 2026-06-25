@@ -92,7 +92,7 @@ function init() {
   initGegoCanvas(canvas);
   initScrollFx((progress) => {
     setScrollProgress(progress);
-    canvas.style.opacity = String(Math.max(0.05, 0.5 - progress * 0.45));
+    canvas.style.opacity = String(Math.max(0.04, 0.35 - progress * 0.31));
     canvas.style.filter  = `blur(${(progress * 10).toFixed(1)}px)`;
   });
   initNavScroll($('.site-nav'));

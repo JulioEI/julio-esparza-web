@@ -22,10 +22,12 @@
 }
 
 .hero__content {
-  position:    relative;
-  z-index:     2;
-  max-width:   680px;
-  padding-top: 6rem; /* clear fixed nav */
+  position:      relative;
+  z-index:       2;
+  max-width:     680px;
+  padding-top:   6rem; /* clear fixed nav */
+  padding-right: 3rem;
+  background:    linear-gradient(to right, var(--color-bg) 55%, transparent 100%);
 }
 
 .hero__eyebrow {
