@@ -30,9 +30,9 @@ function buildGraph(W, H) {
   const nodes = /** @type {Node[]} */ ([]);
   const edges = /** @type {Edge[]} */ ([]);
 
-  // Cluster layout — proportional to canvas dimensions
-  const clusterA = { x: W * 0.72, y: H * 0.38, rx: W * 0.18, ry: H * 0.28 };
-  const clusterB = { x: W * 0.80, y: H * 0.62, rx: W * 0.13, ry: H * 0.22 };
+  // Cluster layout — pushed right so the network sits behind the text column
+  const clusterA = { x: W * 0.74, y: H * 0.38, rx: W * 0.18, ry: H * 0.28 };
+  const clusterB = { x: W * 0.82, y: H * 0.62, rx: W * 0.13, ry: H * 0.22 };
   const countA = 28;
   const countB = 22;
 
@@ -82,7 +82,7 @@ function buildGraph(W, H) {
  * @param {number} t   timestamp from requestAnimationFrame
  */
 function animateNodes(nodes, t) {
-  const DRIFT = 4;
+  const DRIFT = 6;
   nodes.forEach(n => {
     n.x = n.baseX + Math.sin(t * n.speed + n.phase) * DRIFT;
     n.y = n.baseY + Math.cos(t * n.speed * 0.7 + n.phase) * DRIFT * 0.6;
@@ -94,11 +94,22 @@ function animateNodes(nodes, t) {
  * @param {CanvasRenderingContext2D} ctx
  * @param {Node[]} nodes
  * @param {Edge[]} edges
- * @param {number} W
- * @param {number} H
+ * @param {number} W   CSS pixel width
+ * @param {number} H   CSS pixel height
+ * @param {number} scale  scroll-driven scale factor (1.0 at rest)
  */
-function drawFrame(ctx, nodes, edges, W, H) {
+function drawFrame(ctx, nodes, edges, W, H, scale = 1) {
   ctx.clearRect(0, 0, W, H);
+
+  // Anchor expansion on the right side so the network grows toward center-left
+  if (scale !== 1) {
+    const ox = W * 0.88;
+    const oy = H * 0.50;
+    ctx.save();
+    ctx.translate(ox, oy);
+    ctx.scale(scale, scale);
+    ctx.translate(-ox, -oy);
+  }
 
   // Edges
   const MAX_DIST = 180;
@@ -108,13 +119,13 @@ function drawFrame(ctx, nodes, edges, W, H) {
 
     let opacity, lineWidth;
     if (bridge) {
-      opacity   = 0.08;
-      lineWidth = 0.5;
+      opacity   = 0.14;
+      lineWidth = 0.8;
     } else {
       const dist = Math.hypot(b.x - a.x, b.y - a.y);
       const norm = Math.min(dist / MAX_DIST, 1);
-      opacity   = (1 - norm) * 0.22 + 0.04;
-      lineWidth = (1 - norm) * 0.8  + 0.3;
+      opacity   = (1 - norm) * 0.32 + 0.08;
+      lineWidth = (1 - norm) * 1.4  + 0.5;
     }
 
     ctx.beginPath();
@@ -128,8 +139,8 @@ function drawFrame(ctx, nodes, edges, W, H) {
   // Nodes — small intersection dots, Gego-style
   nodes.forEach(n => {
     const isA    = n.cluster === 0;
-    const radius  = isA ? 1.8 : 1.4;
-    const opacity = isA ? 0.45 : 0.35;
+    const radius  = isA ? 2.2 : 1.8;
+    const opacity = isA ? 0.55 : 0.45;
 
     ctx.beginPath();
     ctx.arc(n.x, n.y, radius, 0, Math.PI * 2);
@@ -150,11 +161,23 @@ function drawFrame(ctx, nodes, edges, W, H) {
       const my = (pathNodes[p].y + pathNodes[p + 1].y) / 2;
       ctx.quadraticCurveTo(pathNodes[p].x, pathNodes[p].y, mx, my);
     }
-    ctx.strokeStyle = INK_BASE + '0.28)';
-    ctx.lineWidth   = 1.2;
+    ctx.strokeStyle = INK_BASE + '0.38)';
+    ctx.lineWidth   = 1.8;
     ctx.stroke();
   }
+
+  if (scale !== 1) ctx.restore();
 }
+
+/** Current scroll progress [0–1], updated externally via setScrollProgress. */
+let scrollProgress = 0;
+
+/**
+ * Set the scroll progress so the next animation frame scales the drawing.
+ * Called by scroll-fx.js.
+ * @param {number} p — clamped 0–1
+ */
+export function setScrollProgress(p) { scrollProgress = p; }
 
 /**
  * Initialise and start the Gego canvas animation.
@@ -163,12 +186,17 @@ function drawFrame(ctx, nodes, edges, W, H) {
 export function initGegoCanvas(canvas) {
   const ctx = canvas.getContext('2d');
   let nodes = [], edges = [];
+  let cssW = 0, cssH = 0;
   let rafId = null;
 
   const resize = () => {
-    canvas.width  = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-    ({ nodes, edges } = buildGraph(canvas.width, canvas.height));
+    const dpr = window.devicePixelRatio || 1;
+    cssW = canvas.offsetWidth;
+    cssH = canvas.offsetHeight;
+    canvas.width  = cssW * dpr;
+    canvas.height = cssH * dpr;
+    ctx.scale(dpr, dpr);
+    ({ nodes, edges } = buildGraph(cssW, cssH));
   };
 
   resize();
@@ -176,13 +204,13 @@ export function initGegoCanvas(canvas) {
 
   const loop = (t) => {
     animateNodes(nodes, t);
-    drawFrame(ctx, nodes, edges, canvas.width, canvas.height);
+    drawFrame(ctx, nodes, edges, cssW, cssH, 1 + scrollProgress * 0.5);
     rafId = requestAnimationFrame(loop);
   };
 
   // Respect user's motion preferences
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    drawFrame(ctx, nodes, edges, canvas.width, canvas.height);
+    drawFrame(ctx, nodes, edges, cssW, cssH, 1);
     return; // static frame only
   }
 

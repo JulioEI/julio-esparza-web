@@ -20,8 +20,9 @@ import {
   renderTimelineItem,
   renderAward,
 } from './render.js';
-import { initGegoCanvas } from './gego-canvas.js';
-import { initNavScroll }  from './nav-scroll.js';
+import { initGegoCanvas, setScrollProgress } from './gego-canvas.js';
+import { initNavScroll }                     from './nav-scroll.js';
+import { initScrollFx }                      from './scroll-fx.js';
 
 /** Safely query a required element; throws clearly if missing. */
 function $(selector, context = document) {
@@ -87,7 +88,13 @@ function hydrateSections() {
 
 function init() {
   hydrateSections();
-  initGegoCanvas($('#gego-canvas'));
+  const canvas = $('#gego-canvas');
+  initGegoCanvas(canvas);
+  initScrollFx((progress) => {
+    setScrollProgress(progress);
+    canvas.style.opacity = String(Math.max(0.04, 0.35 - progress * 0.31));
+    canvas.style.filter  = `blur(${(progress * 10).toFixed(1)}px)`;
+  });
   initNavScroll($('.site-nav'));
 }
 
