@@ -40,11 +40,15 @@ export function renderHero(profile) {
   primaryLink.href        = '#research';
   primaryLink.textContent = 'Publications';
 
+  const skillsLink = el('a', ['hero__link', 'hero__link--secondary']);
+  skillsLink.href        = '#skills';
+  skillsLink.textContent = 'Skills';
+
   const contactLink = el('a', ['hero__link', 'hero__link--secondary']);
   contactLink.href        = '#contact';
   contactLink.textContent = 'Contact';
 
-  links.append(primaryLink, contactLink);
+  links.append(primaryLink, skillsLink, contactLink);
   frag.append(eyebrow, name, statement, links);
   return frag;
 }
