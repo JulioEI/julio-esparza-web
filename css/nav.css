@@ -44,3 +44,9 @@
 .nav__links a:hover {
   color: var(--color-ink);
 }
+
+.nav__links a.is-active {
+  color:         var(--color-accent);
+  border-bottom: 1px solid var(--color-accent);
+  padding-bottom: 1px;
+}

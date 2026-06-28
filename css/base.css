@@ -52,14 +52,14 @@ section + section {
   font-size:       11px;
   letter-spacing:  0.2em;
   text-transform:  uppercase;
-  color:           var(--color-ink-mid);
+  color:           var(--color-accent);
 }
 
 .section-label::after {
   content:    '';
   flex:       0 0 40px;
   height:     1px;
-  background: var(--color-line-strong);
+  background: var(--color-accent);
 }
 
 /* ── Utility: screen-reader only ── */

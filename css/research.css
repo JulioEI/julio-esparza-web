@@ -49,8 +49,8 @@
 }
 
 .paper__venue--primary {
-  background:  var(--color-ink);
-  color:       var(--color-bg);
+  background:   var(--color-ink);
+  color:        var(--color-bg);
   border-color: var(--color-ink);
 }
 

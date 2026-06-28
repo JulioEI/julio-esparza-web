@@ -92,7 +92,7 @@ export const PAPERS = [
   },
   {
     year:    '2022',
-    venue:   'Nature Comm.',
+    venue:   'Nature Communications',
     title:   'Ca²⁺-modulated photoactivatable imaging reveals neuron-astrocyte glutamatergic circuitries within the nucleus accumbens',
     authors: 'Serra I., <strong>Esparza J.</strong>, et al.',
     doi:     'https://doi.org/10.1038/s41467-022-33020-6',

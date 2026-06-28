@@ -36,21 +36,19 @@ export function renderHero(profile) {
 
   const links = el('div', 'hero__links');
 
-  const primaryLink = el('a', 'hero__link');
+  const primaryLink = el('a', ['hero__link', 'hero__link--secondary']);
   primaryLink.href        = '#research';
-  primaryLink.textContent = 'View research';
+  primaryLink.textContent = 'Publications';
+
+  const skillsLink = el('a', ['hero__link', 'hero__link--secondary']);
+  skillsLink.href        = '#skills';
+  skillsLink.textContent = 'Skills';
 
   const contactLink = el('a', ['hero__link', 'hero__link--secondary']);
   contactLink.href        = '#contact';
   contactLink.textContent = 'Get in touch';
 
-  const scholarLink = el('a', ['hero__link', 'hero__link--secondary']);
-  scholarLink.href        = profile.links.scholar;
-  scholarLink.target      = '_blank';
-  scholarLink.rel         = 'noopener';
-  scholarLink.textContent = 'Google Scholar ↗';
-
-  links.append(primaryLink, contactLink, scholarLink);
+  links.append(skillsLink, primaryLink, contactLink);
   frag.append(eyebrow, name, statement, links);
   return frag;
 }
