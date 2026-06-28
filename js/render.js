@@ -46,7 +46,7 @@ export function renderHero(profile) {
 
   const contactLink = el('a', ['hero__link', 'hero__link--secondary']);
   contactLink.href        = '#contact';
-  contactLink.textContent = 'Contact';
+  contactLink.textContent = 'Get in touch';
 
   links.append(primaryLink, skillsLink, contactLink);
   frag.append(eyebrow, name, statement, links);
