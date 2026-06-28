@@ -36,7 +36,7 @@ export function renderHero(profile) {
 
   const links = el('div', 'hero__links');
 
-  const primaryLink = el('a', 'hero__link');
+  const primaryLink = el('a', ['hero__link', 'hero__link--secondary']);
   primaryLink.href        = '#research';
   primaryLink.textContent = 'Publications';
 
