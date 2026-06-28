@@ -163,7 +163,7 @@ export const TIMELINE = [
 /** @typedef {{ year: string, type: string, event: string, location: string, note?: string }} Talk */
 export const TALKS = [
   { year: '2025', type: 'Talk',     event: 'Universidad Católica de San Pablo',                          location: 'Arequipa, Peru' },
-  { year: '2025', type: 'Talk',     event: 'Imperial College London',                                    location: 'London, UK' },
+  { year: '2025', type: 'Talk',     event: 'Imperial College London',                                    location: 'London, UK',            note: '"Cell heterogeneity in hippocampal representations"' },
   { year: '2024', type: 'Poster',   event: 'Society for Neuroscience',                                   location: 'Chicago, USA',          note: 'TPDA Award' },
   { year: '2024', type: 'Chair',    event: 'Biophysics Annual Scientific Meeting, UAM',                  location: 'Madrid' },
   { year: '2024', type: 'Panel',    event: "Cajal Junior's Meeting",                                     location: 'Madrid',                 note: '"What I wish I\'d known before starting my PhD"' },
