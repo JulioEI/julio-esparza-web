@@ -59,7 +59,7 @@ section + section {
   content:    '';
   flex:       0 0 40px;
   height:     1px;
-  background: var(--color-line-strong);
+  background: var(--color-accent);
 }
 
 /* ── Utility: screen-reader only ── */
