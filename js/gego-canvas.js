@@ -82,7 +82,7 @@ function buildGraph(W, H) {
  * @param {number} t   timestamp from requestAnimationFrame
  */
 function animateNodes(nodes, t) {
-  const DRIFT = 6;
+  const DRIFT = 12;
   nodes.forEach(n => {
     n.x = n.baseX + Math.sin(t * n.speed + n.phase) * DRIFT;
     n.y = n.baseY + Math.cos(t * n.speed * 0.7 + n.phase) * DRIFT * 0.6;

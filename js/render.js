@@ -48,7 +48,7 @@ export function renderHero(profile) {
   contactLink.href        = '#contact';
   contactLink.textContent = 'Get in touch';
 
-  links.append(primaryLink, skillsLink, contactLink);
+  links.append(skillsLink, primaryLink, contactLink);
   frag.append(eyebrow, name, statement, links);
   return frag;
 }
