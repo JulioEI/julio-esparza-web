@@ -40,7 +40,7 @@ section {
 }
 
 section + section {
-  border-top: 1px solid var(--color-line);
+  border-top: 1px solid var(--color-line-strong);
 }
 
 /* ── Section label (eyebrow above each section heading) ── */
@@ -49,17 +49,17 @@ section + section {
   align-items:     center;
   gap:             1.5rem;
   margin-bottom:   var(--space-xl);
-  font-size:       10px;
+  font-size:       11px;
   letter-spacing:  0.2em;
   text-transform:  uppercase;
-  color:           var(--color-ink-light);
+  color:           var(--color-ink-mid);
 }
 
 .section-label::after {
   content:    '';
   flex:       0 0 40px;
   height:     1px;
-  background: var(--color-ink-xlight);
+  background: var(--color-line-strong);
 }
 
 /* ── Utility: screen-reader only ── */

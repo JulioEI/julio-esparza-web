@@ -39,7 +39,7 @@
 /* ── Venue badge ── */
 .paper__venue {
   display:        inline-block;
-  font-size:      10px;
+  font-size:      11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color:          var(--color-ink-mid);
