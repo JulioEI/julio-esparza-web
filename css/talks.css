@@ -42,26 +42,17 @@
 /* ── Talks list ── */
 .talks-list {
   display:               grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  column-gap:            var(--space-2xl);
 }
 
 .talk {
   display:               grid;
   grid-template-columns: 64px 1fr;
   gap:                   1.5rem;
-  padding:               1.6rem 3rem 1.6rem 0;
+  padding:               1.6rem 0;
   border-bottom:         1px solid var(--color-line);
   align-items:           start;
-}
-
-.talk:first-child {
-  border-top: 1px solid var(--color-line);
-}
-
-.talk:nth-child(even) {
-  padding-left:  3rem;
-  padding-right: 0;
-  border-left:   1px solid var(--color-line);
 }
 
 .talk__year {
