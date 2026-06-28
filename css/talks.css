@@ -1,0 +1,98 @@
+/* =============================================================
+   talks.css — Tab strip (shared) + talks list
+   ============================================================= */
+
+/* ── Tab strip ── */
+.tab-strip {
+  display:       flex;
+  gap:           0;
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-line-strong);
+}
+
+.tab {
+  padding:         0.65rem 1.75rem;
+  font-family:     var(--font-body);
+  font-size:       var(--text-xs);
+  letter-spacing:  0.12em;
+  text-transform:  uppercase;
+  color:           var(--color-ink-light);
+  background:      none;
+  border:          none;
+  border-bottom:   2px solid transparent;
+  margin-bottom:   -1px;
+  cursor:          pointer;
+  transition:      color var(--transition-base), border-color var(--transition-base);
+}
+
+.tab:hover {
+  color: var(--color-ink-mid);
+}
+
+.tab.is-active {
+  color:              var(--color-ink);
+  border-bottom-color: var(--color-line-strong);
+}
+
+/* ── Panel visibility ── */
+.tab-panel--hidden {
+  display: none;
+}
+
+/* ── Talks list ── */
+.talks-list {
+  display:        flex;
+  flex-direction: column;
+}
+
+.talk {
+  display:               grid;
+  grid-template-columns: 64px 1fr;
+  gap:                   1.5rem;
+  padding:               1.6rem 0;
+  border-bottom:         1px solid var(--color-line);
+  align-items:           start;
+}
+
+.talk:first-child {
+  border-top: 1px solid var(--color-line);
+}
+
+.talk__year {
+  font-size:      var(--text-xs);
+  letter-spacing: 0.06em;
+  color:          var(--color-ink-light);
+  padding-top:    3px;
+}
+
+.talk__type {
+  display:        inline-block;
+  font-size:      10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          var(--color-ink-mid);
+  border:         1px solid var(--color-line-strong);
+  padding:        1px 6px;
+  margin-bottom:  0.45rem;
+}
+
+.talk__event {
+  font-family:   var(--font-display);
+  font-size:     var(--text-base);
+  font-weight:   400;
+  color:         var(--color-ink);
+  line-height:   1.35;
+  margin-bottom: 0.2rem;
+}
+
+.talk__location {
+  font-size: var(--text-sm);
+  color:     var(--color-ink-light);
+}
+
+.talk__note {
+  margin-top: 0.3rem;
+  font-size:  var(--text-sm);
+  color:      var(--color-ink-mid);
+  font-style: italic;
+}

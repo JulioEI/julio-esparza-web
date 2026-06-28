@@ -11,7 +11,7 @@
  * those concerns live in render.js and data.js respectively.
  */
 
-import { PROFILE, PAPERS, SKILLS, TIMELINE, AWARDS } from './data.js';
+import { PROFILE, PAPERS, SKILLS, TIMELINE, AWARDS, TALKS } from './data.js';
 import {
   renderHero,
   renderAbout,
@@ -19,6 +19,7 @@ import {
   renderSkills,
   renderTimelineItem,
   renderAward,
+  renderTalk,
 } from './render.js';
 import { initGegoCanvas, setScrollProgress } from './gego-canvas.js';
 import { initNavScroll }                     from './nav-scroll.js';
@@ -58,6 +59,10 @@ function hydrateSections() {
   const awardsGrid = $('#awards-grid');
   AWARDS.forEach(award => awardsGrid.appendChild(renderAward(award)));
 
+  // ── Talks ─────────────────────────────────────────────────
+  const talksList = $('#talks-list');
+  TALKS.forEach(talk => talksList.appendChild(renderTalk(talk)));
+
   // ── Contact ───────────────────────────────────────────────
   $('#contact-lead').textContent = PROFILE.contactText;
   $('#contact-sub').textContent  = PROFILE.location;
@@ -96,6 +101,21 @@ function init() {
     canvas.style.filter  = `blur(${(progress * 10).toFixed(1)}px)`;
   });
   initNavScroll($('.site-nav'));
+  initTabs($('#awards'));
+}
+
+function initTabs(section) {
+  const tabs   = section.querySelectorAll('[role="tab"]');
+  const panels = section.querySelectorAll('.tab-panel');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t   => { t.classList.remove('is-active'); t.setAttribute('aria-selected', 'false'); });
+      panels.forEach(p => p.classList.add('tab-panel--hidden'));
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
+      section.querySelector('#' + tab.dataset.panel).classList.remove('tab-panel--hidden');
+    });
+  });
 }
 
 // Run after DOM is parsed

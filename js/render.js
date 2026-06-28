@@ -150,6 +150,25 @@ export function renderTimelineItem(item) {
 }
 
 /**
+ * Render one talk row.
+ * @param {import('./data.js').Talk} talk
+ * @returns {HTMLElement}
+ */
+export function renderTalk(talk) {
+  const row      = el('div', 'talk');
+  const year     = el('div', 'talk__year', talk.year);
+  const body     = el('div', 'talk__body');
+  const type     = el('span', 'talk__type', talk.type);
+  const event    = el('div', 'talk__event', talk.event);
+  const location = el('div', 'talk__location', talk.location);
+
+  body.append(type, event, location);
+  if (talk.note) body.appendChild(el('div', 'talk__note', talk.note));
+  row.append(year, body);
+  return row;
+}
+
+/**
  * Render one award row.
  * @param {import('./data.js').Award} award
  * @returns {HTMLElement}

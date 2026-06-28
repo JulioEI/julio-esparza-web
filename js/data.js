@@ -161,6 +161,24 @@ export const TIMELINE = [
   },
 ];
 
+/** @typedef {{ year: string, type: string, event: string, location: string, note?: string }} Talk */
+export const TALKS = [
+  { year: '2025', type: 'Talk',     event: 'Universidad Católica de San Pablo',                          location: 'Arequipa, Peru' },
+  { year: '2025', type: 'Talk',     event: 'Imperial College London',                                    location: 'London, UK' },
+  { year: '2024', type: 'Poster',   event: 'Society for Neuroscience',                                   location: 'Chicago, USA',          note: 'TPDA Award' },
+  { year: '2024', type: 'Chair',    event: 'Biophysics Annual Scientific Meeting, UAM',                  location: 'Madrid' },
+  { year: '2024', type: 'Panel',    event: "Cajal Junior's Meeting",                                     location: 'Madrid',                 note: '"What I wish I\'d known before starting my PhD"' },
+  { year: '2024', type: 'Outreach', event: "European Researcher's Night — CaixaForum",                   location: 'Madrid',                 note: '"Deciphering the brain: the shape of thoughts"' },
+  { year: '2023', type: 'Talk',     event: 'ICERM — Topology & Geometry in Neuroscience Workshop',       location: 'Brown University, Providence, USA' },
+  { year: '2023', type: 'Panel',    event: 'Young Academy of Spain / UNED',                              location: 'Madrid',                 note: '"Stages of the Research Career"' },
+  { year: '2022', type: 'Talk',     event: 'NTNU Neural Data Science Winter Symposium',                  location: 'Trondheim, Norway' },
+  { year: '2022', type: 'Talk',     event: 'FENS Forum',                                                 location: 'Paris, France' },
+  { year: '2022', type: 'Poster',   event: 'FENS Forum',                                                 location: 'Paris, France' },
+  { year: '2022', type: 'Poster',   event: 'ENCODS',                                                     location: 'Paris, France' },
+  { year: '2022', type: 'Talk',     event: "Cajal Junior's Meeting",                                     location: 'Madrid' },
+  { year: '2022', type: 'Outreach', event: "European Researcher's Night — CaixaForum",                   location: 'Madrid',                 note: '"How to connect brains to machines" · BCI workshop with live EEG demo' },
+];
+
 /** @typedef {{ year: string, name: string, org: string }} Award */
 export const AWARDS = [
   { year: '2024', name: 'TPDA Award',                        org: 'Society for Neuroscience, Chicago' },
