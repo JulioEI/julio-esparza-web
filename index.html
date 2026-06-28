@@ -93,12 +93,26 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       AWARDS
+       AWARDS / TALKS
   ════════════════════════════════════════════════════════ -->
   <section id="awards" aria-labelledby="awards-heading">
     <p class="section-label" id="awards-heading">Recognition</p>
-    <div class="awards-grid" id="awards-grid">
-      <!-- Hydrated by main.js → renderAward() × N -->
+
+    <div class="tab-strip" role="tablist" aria-label="Recognition tabs">
+      <button class="tab is-active" role="tab" aria-selected="true"  data-panel="honours-panel">Honours</button>
+      <button class="tab"           role="tab" aria-selected="false" data-panel="talks-panel">Talks</button>
+    </div>
+
+    <div id="honours-panel" class="tab-panel">
+      <div class="awards-grid" id="awards-grid">
+        <!-- Hydrated by main.js → renderAward() × N -->
+      </div>
+    </div>
+
+    <div id="talks-panel" class="tab-panel tab-panel--hidden">
+      <div class="talks-list" id="talks-list">
+        <!-- Hydrated by main.js → renderTalk() × N -->
+      </div>
     </div>
   </section>
 

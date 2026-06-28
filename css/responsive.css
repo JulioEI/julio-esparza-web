@@ -46,14 +46,10 @@
     display: none;
   }
 
-  /* Awards */
-  .awards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .award:nth-child(even) {
-    padding-left:  0;
-    border-left:   none;
+  /* Awards + Talks — 2 columns at tablet */
+  .awards-grid,
+  .talks-list {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   /* Footer */
@@ -78,6 +74,12 @@
 
   /* Skills */
   .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Awards + Talks — 1 column on mobile */
+  .awards-grid,
+  .talks-list {
     grid-template-columns: 1fr;
   }
 

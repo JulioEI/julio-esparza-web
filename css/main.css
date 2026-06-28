@@ -14,6 +14,7 @@
 @import url('skills.css');
 @import url('timeline.css');
 @import url('awards.css');
+@import url('talks.css');
 @import url('contact.css');
 
 /* Breakpoints — always last so they can override */
