@@ -167,7 +167,7 @@ export const TALKS = [
   { year: '2024', type: 'Poster',   event: 'Society for Neuroscience',                                   location: 'Chicago, USA',                      note: '"Cell-type-specific geometric transformations in the hippocampal spatial map" · TPDA Award' },
   { year: '2024', type: 'Chair',    event: 'Biophysics Annual Scientific Meeting, UAM',                  location: 'Madrid, Spain',                     note: '"Physical properties of molecular, nanometric and biological systems"' },
   { year: '2024', type: 'Panel',    event: "Cajal Junior's Meeting",                                     location: 'Madrid, Spain',                     note: '"What I wish I\'d known before starting my PhD"' },
-  { year: '2024', type: 'Outreach', event: "European Researcher's Night — CaixaForum",                   location: 'Madrid, Spain',                     note: '"Deciphering the brain: the shape of thoughts"' },
+  { year: '2024', type: 'Outreach', event: "European Researcher's Night, CaixaForum",                   location: 'Madrid, Spain',                     note: '"Deciphering the brain: the shape of thoughts"' },
   { year: '2023', type: 'Talk',     event: 'ICERM — Topology & Geometry in Neuroscience Workshop',       location: 'Brown University, Providence, USA', note: '"Structure Index: a graph-based method for point cloud data analysis"' },
   { year: '2023', type: 'Panel',    event: 'Young Academy of Spain / UNED',                              location: 'Madrid, Spain',                     note: '"Stages of the Research Career"' },
   { year: '2022', type: 'Talk',     event: 'NTNU Neural Data Science Winter Symposium',                  location: 'Trondheim, Norway',                 note: '"Quantifying the distribution of feature values over data represented in arbitrary dimensional spaces"' },
@@ -175,7 +175,7 @@ export const TALKS = [
   { year: '2022', type: 'Poster',   event: 'FENS Forum',                                                 location: 'Paris, France',                     note: '"Inference of hippocampal representations with neural manifolds"' },
   { year: '2022', type: 'Poster',   event: 'ENCODS',                                                     location: 'Paris, France',                     note: '"Neural manifold analysis of hippocampal activity"' },
   { year: '2022', type: 'Talk',     event: "Cajal Junior's Meeting",                                     location: 'Madrid, Spain',                     note: '"Inference of hippocampal representations with neural manifolds"' },
-  { year: '2022', type: 'Outreach', event: "European Researcher's Night — CaixaForum",                   location: 'Madrid, Spain',                     note: '"How to connect brains to machines" · BCI workshop with live EEG demo' },
+  { year: '2022', type: 'Outreach', event: "European Researcher's Night, CaixaForum",                   location: 'Madrid, Spain',                     note: '"How to connect brains to machines" · BCI workshop with live EEG demo' },
   { year: '2021', type: 'Talk',     event: 'AbNeuralNets Annual Meeting',                                location: 'Online (Covid-19)',                  note: '"Unraveling the role of astrocytes in the social brain"' },
   { year: '2019', type: 'Talk',     event: 'Conference of Junior Researchers, Instituto Cajal',          location: 'Madrid, Spain',                            note: '"Local field potential data analysis in vivo: deciphering functional astrocyte-neuron networks"' },
 ];
