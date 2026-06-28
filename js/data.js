@@ -65,7 +65,6 @@ export const PAPERS = [
   {
     year:    '2025',
     venue:   'Neuron',
-    primary: true,
     title:   'Cell-type-specific manifold analysis discloses independent geometric transformations in the hippocampal spatial code',
     authors: '<strong>Esparza J.</strong>, Quintanilla JP., Cid E., Medeiros AC., Gallego JA., de la Prida LM.',
     doi:     'https://doi.org/10.1016/j.neuron.2025.01.024',
