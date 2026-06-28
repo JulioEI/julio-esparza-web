@@ -34,7 +34,7 @@
   font-size:      var(--text-xs);
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color:          var(--color-ink-mid);
+  color:          var(--color-accent);
   margin-bottom:  var(--space-md);
 }
 

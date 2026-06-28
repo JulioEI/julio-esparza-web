@@ -38,19 +38,13 @@ export function renderHero(profile) {
 
   const primaryLink = el('a', 'hero__link');
   primaryLink.href        = '#research';
-  primaryLink.textContent = 'View research';
+  primaryLink.textContent = 'Publications';
 
   const contactLink = el('a', ['hero__link', 'hero__link--secondary']);
   contactLink.href        = '#contact';
-  contactLink.textContent = 'Get in touch';
+  contactLink.textContent = 'Contact';
 
-  const scholarLink = el('a', ['hero__link', 'hero__link--secondary']);
-  scholarLink.href        = profile.links.scholar;
-  scholarLink.target      = '_blank';
-  scholarLink.rel         = 'noopener';
-  scholarLink.textContent = 'Google Scholar ↗';
-
-  links.append(primaryLink, contactLink, scholarLink);
+  links.append(primaryLink, contactLink);
   frag.append(eyebrow, name, statement, links);
   return frag;
 }
