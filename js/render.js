@@ -167,6 +167,25 @@ export function renderTalk(talk) {
 }
 
 /**
+ * Render one project card (square tile for the grid).
+ * @param {import('./data.js').Project} project
+ * @returns {HTMLButtonElement}
+ */
+export function renderProjectCard(project) {
+  const btn      = el('button', 'project-card');
+  btn.type       = 'button';
+  btn.dataset.id = project.id;
+
+  const category = el('span', 'project-card__category', project.category);
+  const title    = el('h3',   'project-card__title',    project.title);
+  const tagline  = el('p',    'project-card__tagline',  project.tagline);
+  const year     = el('span', 'project-card__year',     project.year);
+
+  btn.append(category, title, tagline, year);
+  return btn;
+}
+
+/**
  * Render one award row.
  * @param {import('./data.js').Award} award
  * @returns {HTMLElement}

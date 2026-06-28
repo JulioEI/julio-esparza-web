@@ -52,6 +52,16 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Projects — 2 columns at tablet */
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Overlay close button */
+  .project-overlay__close {
+    right: var(--section-padding-x);
+  }
+
   /* Footer */
   .site-footer {
     flex-direction: column;
@@ -81,6 +91,16 @@
   .awards-grid,
   .talks-list {
     grid-template-columns: 1fr;
+  }
+
+  /* Projects — 1 column on mobile, no aspect-ratio */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    aspect-ratio: unset;
+    min-height:   240px;
   }
 
   /* Timeline */

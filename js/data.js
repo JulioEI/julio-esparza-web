@@ -106,6 +106,56 @@ export const PAPERS = [
   },
 ];
 
+/** @typedef {{ id: string, year: string, category: string, title: string, tagline: string, body: (string|{heading:string,text:string})[], tags: string[], links?: {label:string,href:string}[] }} Project */
+export const PROJECTS = [
+  {
+    id:       'structure-index',
+    year:     '2024',
+    category: 'Open Source Tool',
+    title:    'Structure Index',
+    tagline:  'A graph-based measure for quantifying how strongly a continuous variable organizes a point cloud in spaces of arbitrary dimensionality.',
+    body: [
+      'Most methods for probing high-dimensional data ask whether two groups differ. The Structure Index asks a different question: how much does a given variable — position, frequency, semantic similarity — determine the local geometry of a point cloud? The answer is a scalar in [0, 1] computed from a k-nearest-neighbour graph: 0 is no structure, 1 is perfect organization.',
+      { heading: 'Method', text: 'The method builds a k-NN graph over the data, then measures the ratio of within-class to between-class edge weights as class boundaries are swept across the variable\'s range. A permutation test provides a null distribution. The full Python implementation is open-source and pip-installable.' },
+      { heading: 'Validation', text: 'Validated across three domains: CA1 spatial tuning in electrophysiology, genre structure in audio spectrograms, and category separation in ImageNet embeddings. The method detects structure that linear classifiers and PCA miss when the organizing variable has nonlinear geometry.' },
+    ],
+    tags:  ['Python', 'Graph theory', 'k-NN', 'Open source', 'Neural data', 'Computer vision'],
+    links: [
+      { label: 'GitHub', href: 'https://github.com/PridaLab/structure_index' },
+      { label: 'Paper',  href: 'https://doi.org/10.1371/journal.pcbi.1011768' },
+    ],
+  },
+  {
+    id:       'ca1-sublayer-manifolds',
+    year:     '2025',
+    category: 'Research',
+    title:    'CA1 Sublayer Manifolds',
+    tagline:  'Manifold analysis revealing that deep and superficial CA1 pyramidal cells form geometrically distinct, independent spatial codes.',
+    body: [
+      'The hippocampus has long been treated as a single computational unit. This project asked whether averaging across CA1 was hiding meaningful heterogeneity. It was. Deep and superficial sublayer cells form separate neural manifolds with different reference frames, different drift dynamics, and different relationships to sharp-wave ripple events.',
+      { heading: 'Methods', text: 'Custom calcium imaging analysis pipeline to segment and classify cells by sublayer depth, followed by manifold analysis using Structure Index and principal curve fitting to quantify the geometric properties of each population\'s spatial code. Data from behaving mice navigating linear and open-field environments.' },
+      { heading: 'Impact', text: 'First-author paper in Neuron (2025). Overturns the assumption that CA1 computes a single unified spatial code and reframes how population-level signals should be interpreted across the hippocampal formation.' },
+    ],
+    tags:  ['Neural manifolds', 'Calcium imaging', 'Electrophysiology', 'Python', 'MATLAB'],
+    links: [
+      { label: 'Paper', href: 'https://doi.org/10.1016/j.neuron.2025.01.024' },
+    ],
+  },
+  {
+    id:       'genai-pipeline',
+    year:     '2025',
+    category: 'Production AI',
+    title:    'GenAI Data Pipeline',
+    tagline:  'Production LLM integration harmonising data from 20+ external providers for international client reporting at Deloitte.',
+    body: [
+      'Designed and shipped a production GenAI pipeline for a large international client. The core problem: 20+ external data providers with incompatible schemas, update cadences, and quality levels, feeding into a reporting layer that needed to be consistent, auditable, and fast.',
+      { heading: 'Architecture', text: 'Semantic layer over Snowflake with dbt, AI agents that run automated data quality checks on each provider\'s feed, and an LLM-powered harmonisation step that resolves naming conflicts and missing mappings. All infrastructure designed and owned end-to-end.' },
+      { heading: 'Scale', text: 'Processes data from over 20 international providers daily, feeding executive dashboards used for strategic decisions. The AI quality agents catch schema drift and outlier values before they reach downstream models.' },
+    ],
+    tags:  ['LLM', 'AI agents', 'Snowflake', 'dbt', 'ETL', 'Python'],
+  },
+];
+
 /** @typedef {{ heading: string, items: string[] }} SkillGroup */
 export const SKILLS = [
   {

@@ -37,6 +37,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#timeline">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -79,6 +80,16 @@
     <p class="section-label" id="research-heading">Selected Publications</p>
     <div class="papers-list" id="papers-list" role="list">
       <!-- Hydrated by main.js → renderPaper() × N -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PROJECTS
+  ════════════════════════════════════════════════════════ -->
+  <section id="projects" aria-labelledby="projects-heading">
+    <p class="section-label" id="projects-heading">Projects</p>
+    <div class="projects-grid" id="projects-grid">
+      <!-- Hydrated by main.js → renderProjectCard() × N -->
     </div>
   </section>
 
@@ -134,6 +145,24 @@
     <span class="footer__text" id="footer-credit"><!-- Hydrated --></span>
     <span class="footer__text">julioesparza.com</span>
   </footer>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PROJECT OVERLAY — full-screen detail panel
+  ════════════════════════════════════════════════════════ -->
+  <div id="project-overlay" class="project-overlay" role="dialog" aria-modal="true" aria-labelledby="overlay-title">
+    <button class="project-overlay__close" aria-label="Close">&#x2715;</button>
+    <div class="project-overlay__inner">
+      <div class="project-overlay__meta">
+        <span class="project-overlay__category"></span>
+        <span class="project-overlay__year"></span>
+      </div>
+      <h2 class="project-overlay__title" id="overlay-title"></h2>
+      <p class="project-overlay__tagline"></p>
+      <div class="project-overlay__body"></div>
+      <div class="project-overlay__tags"></div>
+      <div class="project-overlay__links"></div>
+    </div>
+  </div>
 
   <!-- ── JS entry (ES module) ── -->
   <script type="module" src="js/main.js"></script>
