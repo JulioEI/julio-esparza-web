@@ -20,6 +20,11 @@ export const PROFILE = {
       the satisfaction of knowing, the curiosity towards the unknown, and the
       desire to make a positive impact.`,
     paragraphs: [
+      `Trained as an engineer, I kept asking scientific questions. Trained as a
+      scientist, I kept wanting to build things. That tension has shaped
+      everything: doctoral research into how the brain organises information,
+      computational tools that generalise beyond neuroscience, and production
+      AI systems that have to work in the real world.`,
       `Neural circuits organise information geometrically, in the collective
       activity of hundreds of neurons at once. My doctoral research studied
       how cell diversity shapes this geometry in the hippocampus, the brain's
