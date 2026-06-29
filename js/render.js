@@ -40,6 +40,10 @@ export function renderHero(profile) {
   primaryLink.href        = '#research';
   primaryLink.textContent = 'Publications';
 
+  const aboutLink = el('a', ['hero__link', 'hero__link--secondary']);
+  aboutLink.href        = '#about';
+  aboutLink.textContent = 'About';
+
   const skillsLink = el('a', ['hero__link', 'hero__link--secondary']);
   skillsLink.href        = '#skills';
   skillsLink.textContent = 'Skills';
@@ -48,7 +52,7 @@ export function renderHero(profile) {
   contactLink.href        = '#contact';
   contactLink.textContent = 'Get in touch';
 
-  links.append(skillsLink, primaryLink, contactLink);
+  links.append(aboutLink, skillsLink, primaryLink, contactLink);
   frag.append(eyebrow, name, statement, links);
   return frag;
 }
