@@ -45,14 +45,11 @@ export const PROFILE = {
       interpretability and representation learning research. Open source at
       <a href="https://github.com/PridaLab/structure_index"
       target="_blank" rel="noopener">PridaLab/structure_index</a>.`,
-      `I chose engineering because it let me translate scientific depth into
-      something that actually works in the world, and that instinct never
-      went quiet through a PhD spent on methodological rigor. Today I build
-      production AI infrastructure at Deloitte: GenAI pipelines and LLM
-      integrations that harmonize data across 20+ external providers, AI
-      agents for automated data quality checks, semantic layers over
-      Snowflake, all running on infrastructure I designed end to end. Same
-      instinct, now applied to systems people depend on daily.`,
+      `The same instinct now runs in production. I design end-to-end AI
+      solutions for international clients: LLM pipelines that harmonise data
+      across 20+ providers, AI agents for automated quality checks, semantic
+      layers that make unstructured data queryable. The science and the
+      engineering have always been the same problem.`,
     ],
     stats: [
       { number: '7',  label: 'Publications' },
