@@ -20,13 +20,13 @@ export const PROFILE = {
       the satisfaction of knowing, the curiosity towards the unknown, and the
       desire to make a positive impact.`,
     paragraphs: [
-      `My doctoral research asked a simple question: why does averaging across
-      CA1 erase structure that's obvious once you separate cell types? The
-      answer was that deep and superficial sublayers form geometrically
-      distinct neural manifolds, encoding space through entirely independent
-      reference frames. That overturned the assumption that CA1 computes a
-      single, unified spatial code, with direct implications for how
-      population-level signals are interpreted across the field.`,
+      `Neural circuits organise information geometrically, in the collective
+      activity of hundreds of neurons at once. My doctoral research studied
+      how cell diversity shapes this geometry in the hippocampus, the brain's
+      spatial navigation system. Two adjacent neural populations maintain
+      independent geometric representations of the same environment, each
+      anchored to a different reference frame. Mixing them erases both.
+      Unit identity is not a biological detail, it is a computational one.`,
       `Beyond neuroscience, I design general-purpose computational tools: the
       Structure Index (SI), a graph-based method for quantifying variable
       organization in arbitrary-dimensional spaces, has been validated across
