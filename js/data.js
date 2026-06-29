@@ -8,18 +8,17 @@ export const PROFILE = {
   name:      'Julio Esparza',
   nameShort: 'Julio\nEsparza',
   eyebrow:   'Computational Neuroscientist · AI Engineer',
-  statement: `I build the tools to ask sharper questions about high-dimensional
-    data, then ship them: a manifold-analysis method reused across
-    neuroscience, audio, and computer vision, and production GenAI
-    infrastructure integrating data across 20+ external providers at Deloitte.
-    My research on hippocampal coding, published first-author in
-    <em>Neuron</em> and co-first-author in <em>PLOS Computational Biology</em>,
-    has been cited 450+ times. PhD Cum Laude.`,
+  statement: `Biomedical engineer with a PhD in neuroscience, trained to
+    understand systems from first principles and build things that actually work.
+    I am drawn to problems where biological understanding and AI reinforce each
+    other: tools precise enough for peer review, robust enough for production.
+    First-author in <em>Neuron</em> (2025), PhD Cum Laude, now building GenAI
+    pipelines for leading clients.`,
   about: {
-    lead: `Trained as a biomedical engineer, I'm drawn to problems where
-      rigorous science has to become something that actually works: tools
-      that ask sharper questions about the brain, and systems people
-      actually use.`,
+    lead: `I'm a melding of a scientist's need to understand things from first
+      principles and an engineer's refusal to stop until something works. I am
+      fuelled by the satisfaction of knowing, the curiosity towards the unknown,
+      and the desire to make a positive impact.`,
     paragraphs: [
       `My doctoral research asked a simple question: why does averaging across
       CA1 erase structure that's obvious once you separate cell types? The
