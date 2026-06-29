@@ -48,8 +48,8 @@ export const PROFILE = {
       `The same instinct now runs in production. I design end-to-end AI
       solutions for international clients: LLM pipelines that harmonise data
       across 20+ providers, AI agents for automated quality checks, semantic
-      layers that make unstructured data queryable. The science and the
-      engineering have always been the same problem.`,
+      layers that make unstructured data queryable. The methods change.
+      The instinct does not.`,
     ],
     stats: [
       { number: '7',  label: 'Publications' },
