@@ -40,6 +40,10 @@ export function renderHero(profile) {
   primaryLink.href        = '#research';
   primaryLink.textContent = 'Publications';
 
+  const aboutLink = el('a', ['hero__link', 'hero__link--secondary']);
+  aboutLink.href        = '#about';
+  aboutLink.textContent = 'About';
+
   const skillsLink = el('a', ['hero__link', 'hero__link--secondary']);
   skillsLink.href        = '#skills';
   skillsLink.textContent = 'Skills';
@@ -48,7 +52,7 @@ export function renderHero(profile) {
   contactLink.href        = '#contact';
   contactLink.textContent = 'Get in touch';
 
-  links.append(skillsLink, primaryLink, contactLink);
+  links.append(aboutLink, skillsLink, primaryLink, contactLink);
   frag.append(eyebrow, name, statement, links);
   return frag;
 }
@@ -164,6 +168,25 @@ export function renderTalk(talk) {
   if (talk.note) body.appendChild(el('div', 'talk__note', talk.note));
   row.append(year, body);
   return row;
+}
+
+/**
+ * Render one project card (square tile for the grid).
+ * @param {import('./data.js').Project} project
+ * @returns {HTMLButtonElement}
+ */
+export function renderProjectCard(project) {
+  const btn      = el('button', 'project-card');
+  btn.type       = 'button';
+  btn.dataset.id = project.id;
+
+  const category = el('span', 'project-card__category', project.category);
+  const title    = el('h3',   'project-card__title',    project.title);
+  const tagline  = el('p',    'project-card__tagline',  project.tagline);
+  const year     = el('span', 'project-card__year',     project.year);
+
+  btn.append(category, title, tagline, year);
+  return btn;
 }
 
 /**

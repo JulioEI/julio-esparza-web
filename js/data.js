@@ -8,41 +8,48 @@ export const PROFILE = {
   name:      'Julio Esparza',
   nameShort: 'Julio\nEsparza',
   eyebrow:   'Computational Neuroscientist · AI Engineer',
-  statement: `I build the tools to ask sharper questions about high-dimensional
-    data, then ship them: a manifold-analysis method reused across
-    neuroscience, audio, and computer vision, and production GenAI
-    infrastructure integrating data across 20+ external providers at Deloitte.
-    My research on hippocampal coding, published first-author in
-    <em>Neuron</em> and co-first-author in <em>PLOS Computational Biology</em>,
-    has been cited 450+ times. PhD Cum Laude.`,
+  statement: `Biomedical engineer with a PhD in neuroscience, trained to
+    understand systems from first principles and build things that actually work.
+    I am drawn to problems where biological understanding and AI reinforce each
+    other: tools precise enough for peer review, robust enough for production.
+    First-author in <em>Neuron</em> (2025), PhD Cum Laude. Now building
+    production AI systems at the intersection of both.`,
   about: {
-    lead: `Trained as a biomedical engineer, I'm drawn to problems where
-      rigorous science has to become something that actually works: tools
-      that ask sharper questions about the brain, and systems people
-      actually use.`,
+    lead: `I carry a scientist's need to understand things from first principles
+      and an engineer's refusal to stop until something works. I am fuelled by
+      the satisfaction of knowing, the curiosity towards the unknown, and the
+      desire to make a positive impact.`,
     paragraphs: [
-      `My doctoral research asked a simple question: why does averaging across
-      CA1 erase structure that's obvious once you separate cell types? The
-      answer was that deep and superficial sublayers form geometrically
-      distinct neural manifolds, encoding space through entirely independent
-      reference frames. That overturned the assumption that CA1 computes a
-      single, unified spatial code, with direct implications for how
-      population-level signals are interpreted across the field.`,
-      `Beyond neuroscience, I design general-purpose computational tools: the
-      Structure Index (SI), a graph-based method for quantifying variable
-      organization in arbitrary-dimensional spaces, has been validated across
-      neural data, audio classification, and computer vision. It's open
-      source at <a href="https://github.com/PridaLab/structure_index"
-      target="_blank" rel="noopener">PridaLab/structure_index</a> and has
-      been cited 11 times since publication.`,
-      `I chose engineering because it let me translate scientific depth into
-      something that actually works in the world, and that instinct never
-      went quiet through a PhD spent on methodological rigor. Today I build
-      production AI infrastructure at Deloitte: GenAI pipelines and LLM
-      integrations that harmonize data across 20+ external providers, AI
-      agents for automated data quality checks, semantic layers over
-      Snowflake, all running on infrastructure I designed end to end. Same
-      instinct, now applied to systems people depend on daily.`,
+      `Trained as an engineer, I kept asking scientific questions. Trained as a
+      scientist, I kept wanting to build things. That tension has shaped
+      everything: doctoral research into how the brain organises information,
+      computational tools that generalise beyond neuroscience, and production
+      AI systems that have to work in the real world.`,
+      `Neural circuits organise information geometrically, in the collective
+      activity of hundreds of neurons at once. My doctoral research asked
+      how cell diversity shapes this geometry in the hippocampus, the brain's
+      spatial navigation system. The answer was sharper than expected: two
+      adjacent neural populations maintain independent geometric representations
+      of the same environment, each anchored to a different reference frame.
+      Mixing them erases both. Unit identity is not a biological detail,
+      it is a computational one.`,
+      `That realisation required a tool to measure it properly. My engineering
+      background equipped me to build the tools that do not yet exist. The
+      Structure Index is the one I built for this: leveraging graph theory,
+      it quantifies how strongly any variable organises a point cloud, in
+      spaces of arbitrary dimensionality. Built for neural data but designed
+      from the start to be general purpose, it has since been validated in
+      audio classification and computer vision. It applies equally to
+      artificial neural networks: quantifying how concepts and features are
+      organised in learned latent spaces, a question central to
+      interpretability and representation learning research. Open source at
+      <a href="https://github.com/PridaLab/structure_index"
+      target="_blank" rel="noopener">PridaLab/structure_index</a>.`,
+      `The same instinct now runs in production. I design end-to-end AI
+      solutions for international clients: LLM pipelines that harmonise data
+      across 20+ providers, AI agents for automated quality checks, semantic
+      layers that make unstructured data queryable. The methods change.
+      The instinct does not.`,
     ],
     stats: [
       { number: '7',  label: 'Publications' },
@@ -103,6 +110,56 @@ export const PAPERS = [
     title:   'GABAergic signaling to astrocytes in the prefrontal cortex sustains goal-directed behaviors',
     authors: 'Mederos S., Sánchez-Puelles C., <strong>Esparza J.</strong>, et al.',
     doi:     'https://doi.org/10.1038/s41593-020-00752-x',
+  },
+];
+
+/** @typedef {{ id: string, year: string, category: string, title: string, tagline: string, body: (string|{heading:string,text:string})[], tags: string[], links?: {label:string,href:string}[] }} Project */
+export const PROJECTS = [
+  {
+    id:       'structure-index',
+    year:     '2024',
+    category: 'Open Source Tool',
+    title:    'Structure Index',
+    tagline:  'A graph-based measure for quantifying how strongly a continuous variable organizes a point cloud in spaces of arbitrary dimensionality.',
+    body: [
+      'Most methods for probing high-dimensional data ask whether two groups differ. The Structure Index asks a different question: how much does a given variable — position, frequency, semantic similarity — determine the local geometry of a point cloud? The answer is a scalar in [0, 1] computed from a k-nearest-neighbour graph: 0 is no structure, 1 is perfect organization.',
+      { heading: 'Method', text: 'The method builds a k-NN graph over the data, then measures the ratio of within-class to between-class edge weights as class boundaries are swept across the variable\'s range. A permutation test provides a null distribution. The full Python implementation is open-source and pip-installable.' },
+      { heading: 'Validation', text: 'Validated across three domains: CA1 spatial tuning in electrophysiology, genre structure in audio spectrograms, and category separation in ImageNet embeddings. The method detects structure that linear classifiers and PCA miss when the organizing variable has nonlinear geometry.' },
+    ],
+    tags:  ['Python', 'Graph theory', 'k-NN', 'Open source', 'Neural data', 'Computer vision'],
+    links: [
+      { label: 'GitHub', href: 'https://github.com/PridaLab/structure_index' },
+      { label: 'Paper',  href: 'https://doi.org/10.1371/journal.pcbi.1011768' },
+    ],
+  },
+  {
+    id:       'ca1-sublayer-manifolds',
+    year:     '2025',
+    category: 'Research',
+    title:    'CA1 Sublayer Manifolds',
+    tagline:  'Manifold analysis revealing that deep and superficial CA1 pyramidal cells form geometrically distinct, independent spatial codes.',
+    body: [
+      'The hippocampus has long been treated as a single computational unit. This project asked whether averaging across CA1 was hiding meaningful heterogeneity. It was. Deep and superficial sublayer cells form separate neural manifolds with different reference frames, different drift dynamics, and different relationships to sharp-wave ripple events.',
+      { heading: 'Methods', text: 'Custom calcium imaging analysis pipeline to segment and classify cells by sublayer depth, followed by manifold analysis using Structure Index and principal curve fitting to quantify the geometric properties of each population\'s spatial code. Data from behaving mice navigating linear and open-field environments.' },
+      { heading: 'Impact', text: 'First-author paper in Neuron (2025). Overturns the assumption that CA1 computes a single unified spatial code and reframes how population-level signals should be interpreted across the hippocampal formation.' },
+    ],
+    tags:  ['Neural manifolds', 'Calcium imaging', 'Electrophysiology', 'Python', 'MATLAB'],
+    links: [
+      { label: 'Paper', href: 'https://doi.org/10.1016/j.neuron.2025.01.024' },
+    ],
+  },
+  {
+    id:       'genai-pipeline',
+    year:     '2025',
+    category: 'Production AI',
+    title:    'GenAI Data Pipeline',
+    tagline:  'Production LLM integration harmonising data from 20+ external providers for international client reporting at Deloitte.',
+    body: [
+      'Designed and shipped a production GenAI pipeline for a large international client. The core problem: 20+ external data providers with incompatible schemas, update cadences, and quality levels, feeding into a reporting layer that needed to be consistent, auditable, and fast.',
+      { heading: 'Architecture', text: 'Semantic layer over Snowflake with dbt, AI agents that run automated data quality checks on each provider\'s feed, and an LLM-powered harmonisation step that resolves naming conflicts and missing mappings. All infrastructure designed and owned end-to-end.' },
+      { heading: 'Scale', text: 'Processes data from over 20 international providers daily, feeding executive dashboards used for strategic decisions. The AI quality agents catch schema drift and outlier values before they reach downstream models.' },
+    ],
+    tags:  ['LLM', 'AI agents', 'Snowflake', 'dbt', 'ETL', 'Python'],
   },
 ];
 

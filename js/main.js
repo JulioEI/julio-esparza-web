@@ -11,7 +11,7 @@
  * those concerns live in render.js and data.js respectively.
  */
 
-import { PROFILE, PAPERS, SKILLS, TIMELINE, AWARDS, TALKS } from './data.js';
+import { PROFILE, PAPERS, SKILLS, TIMELINE, AWARDS, TALKS, PROJECTS } from './data.js';
 import {
   renderHero,
   renderAbout,
@@ -20,6 +20,7 @@ import {
   renderTimelineItem,
   renderAward,
   renderTalk,
+  renderProjectCard,
 } from './render.js';
 import { initGegoCanvas, setScrollProgress } from './gego-canvas.js';
 import { initNavScroll }                     from './nav-scroll.js';
@@ -58,6 +59,10 @@ function hydrateSections() {
   // ── Awards ────────────────────────────────────────────────
   const awardsGrid = $('#awards-grid');
   AWARDS.forEach(award => awardsGrid.appendChild(renderAward(award)));
+
+  // ── Projects ──────────────────────────────────────────────
+  const projectsGrid = $('#projects-grid');
+  PROJECTS.forEach(project => projectsGrid.appendChild(renderProjectCard(project)));
 
   // ── Talks ─────────────────────────────────────────────────
   const talksList = $('#talks-list');
@@ -102,6 +107,84 @@ function init() {
   });
   initNavScroll($('.site-nav'));
   initTabs($('#awards'));
+  initProjectOverlay();
+}
+
+function initProjectOverlay() {
+  const overlay  = $('#project-overlay');
+  const closeBtn = overlay.querySelector('.project-overlay__close');
+
+  const els = {
+    category: overlay.querySelector('.project-overlay__category'),
+    year:     overlay.querySelector('.project-overlay__year'),
+    title:    overlay.querySelector('.project-overlay__title'),
+    tagline:  overlay.querySelector('.project-overlay__tagline'),
+    body:     overlay.querySelector('.project-overlay__body'),
+    tags:     overlay.querySelector('.project-overlay__tags'),
+    links:    overlay.querySelector('.project-overlay__links'),
+  };
+
+  function open(project) {
+    els.category.textContent = project.category;
+    els.year.textContent     = project.year;
+    els.title.textContent    = project.title;
+    els.tagline.textContent  = project.tagline;
+
+    els.body.innerHTML = '';
+    project.body.forEach(item => {
+      if (typeof item === 'string') {
+        const p = document.createElement('p');
+        p.textContent = item;
+        els.body.appendChild(p);
+      } else {
+        const h = document.createElement('h3');
+        h.textContent = item.heading;
+        const p = document.createElement('p');
+        p.textContent = item.text;
+        els.body.append(h, p);
+      }
+    });
+
+    els.tags.innerHTML = '';
+    (project.tags || []).forEach(tag => {
+      const span = document.createElement('span');
+      span.className   = 'project-overlay__tag';
+      span.textContent = tag;
+      els.tags.appendChild(span);
+    });
+
+    els.links.innerHTML = '';
+    (project.links || []).forEach(({ label, href }) => {
+      const a = document.createElement('a');
+      a.className   = 'project-overlay__link';
+      a.href        = href;
+      a.textContent = label;
+      a.target      = '_blank';
+      a.rel         = 'noopener';
+      els.links.appendChild(a);
+    });
+
+    overlay.classList.add('is-open');
+    overlay.scrollTop            = 0;
+    document.body.style.overflow = 'hidden';
+    history.pushState(null, '', `#project-${project.id}`);
+  }
+
+  function close() {
+    overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+    history.pushState(null, '', location.pathname + location.search);
+  }
+
+  document.querySelector('.projects-grid').addEventListener('click', e => {
+    const card = e.target.closest('.project-card');
+    if (!card) return;
+    const project = PROJECTS.find(p => p.id === card.dataset.id);
+    if (project) open(project);
+  });
+
+  closeBtn.addEventListener('click', close);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 }
 
 function initTabs(section) {
