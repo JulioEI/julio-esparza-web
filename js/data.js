@@ -26,12 +26,13 @@ export const PROFILE = {
       computational tools that generalise beyond neuroscience, and production
       AI systems that have to work in the real world.`,
       `Neural circuits organise information geometrically, in the collective
-      activity of hundreds of neurons at once. My doctoral research studied
+      activity of hundreds of neurons at once. My doctoral research asked
       how cell diversity shapes this geometry in the hippocampus, the brain's
-      spatial navigation system. Two adjacent neural populations maintain
-      independent geometric representations of the same environment, each
-      anchored to a different reference frame. Mixing them erases both.
-      Unit identity is not a biological detail, it is a computational one.`,
+      spatial navigation system. The answer was sharper than expected: two
+      adjacent neural populations maintain independent geometric representations
+      of the same environment, each anchored to a different reference frame.
+      Mixing them erases both. Unit identity is not a biological detail,
+      it is a computational one.`,
       `Beyond neuroscience, I design general-purpose computational tools: the
       Structure Index (SI), a graph-based method for quantifying variable
       organization in arbitrary-dimensional spaces, has been validated across
