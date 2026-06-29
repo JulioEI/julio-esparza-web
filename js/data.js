@@ -15,10 +15,10 @@ export const PROFILE = {
     First-author in <em>Neuron</em> (2025), PhD Cum Laude. Now building
     production AI systems at the intersection of both.`,
   about: {
-    lead: `I'm a melding of a scientist's need to understand things from first
-      principles and an engineer's refusal to stop until something works. I am
-      fuelled by the satisfaction of knowing, the curiosity towards the unknown,
-      and the desire to make a positive impact.`,
+    lead: `I carry a scientist's need to understand things from first principles
+      and an engineer's refusal to stop until something works. I am fuelled by
+      the satisfaction of knowing, the curiosity towards the unknown, and the
+      desire to make a positive impact.`,
     paragraphs: [
       `My doctoral research asked a simple question: why does averaging across
       CA1 erase structure that's obvious once you separate cell types? The
