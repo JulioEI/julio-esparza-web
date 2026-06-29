@@ -33,13 +33,18 @@ export const PROFILE = {
       of the same environment, each anchored to a different reference frame.
       Mixing them erases both. Unit identity is not a biological detail,
       it is a computational one.`,
-      `Beyond neuroscience, I design general-purpose computational tools: the
-      Structure Index (SI), a graph-based method for quantifying variable
-      organization in arbitrary-dimensional spaces, has been validated across
-      neural data, audio classification, and computer vision. It's open
-      source at <a href="https://github.com/PridaLab/structure_index"
-      target="_blank" rel="noopener">PridaLab/structure_index</a> and has
-      been cited 11 times since publication.`,
+      `That realisation required a tool to measure it properly. My engineering
+      background equipped me to build the tools that do not yet exist. The
+      Structure Index is the one I built for this: leveraging graph theory,
+      it quantifies how strongly any variable organises a point cloud, in
+      spaces of arbitrary dimensionality. Built for neural data but designed
+      from the start to be general purpose, it has since been validated in
+      audio classification and computer vision. It applies equally to
+      artificial neural networks: quantifying how concepts and features are
+      organised in learned latent spaces, a question central to
+      interpretability and representation learning research. Open source at
+      <a href="https://github.com/PridaLab/structure_index"
+      target="_blank" rel="noopener">PridaLab/structure_index</a>.`,
       `I chose engineering because it let me translate scientific depth into
       something that actually works in the world, and that instinct never
       went quiet through a PhD spent on methodological rigor. Today I build
