@@ -12,8 +12,8 @@ export const PROFILE = {
     understand systems from first principles and build things that actually work.
     I am drawn to problems where biological understanding and AI reinforce each
     other: tools precise enough for peer review, robust enough for production.
-    First-author in <em>Neuron</em> (2025), PhD Cum Laude, now building GenAI
-    pipelines for leading clients.`,
+    First-author in <em>Neuron</em> (2025), PhD Cum Laude. Now building
+    production AI systems at the intersection of both.`,
   about: {
     lead: `I'm a melding of a scientist's need to understand things from first
       principles and an engineer's refusal to stop until something works. I am
